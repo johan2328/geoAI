@@ -1,0 +1,9 @@
+column_name,type
+oid,numerical
+id,object
+Material,categorical
+Fecha_instalacion,numerical
+Diametro_pulgadas,categorical
+Longitud_millas,numerical
+Tiempo_vida,numerical
+others,numerical
