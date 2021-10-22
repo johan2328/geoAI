@@ -53,7 +53,6 @@ html_temp = """
 st.markdown(html_temp, unsafe_allow_html = True)
 
 app.run()
-#st.set_page_config(page_title="Ex-stream-ly Cool App",page_icon="🧊")
 st.markdown('<br></br>', unsafe_allow_html=True)
 st.markdown('<br></br>', unsafe_allow_html=True)
 
