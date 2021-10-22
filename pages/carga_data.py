@@ -5,16 +5,14 @@ from pages import utils
 from PIL import  Image
 import streamlit.components.v1 as components        
 
-#st.set_page_config(page_title="Ex-stream-ly Cool App",page_icon="🧊")
 
 #@st.cache
 def app():
-    #st.set_page_config(page_title='your_title', page_icon="🧊")
     st.markdown("", unsafe_allow_html=True)
     #st.markdown("<h2 style='text-align: center; color: #2e6c80;'>Predicción de rupturas en red de distribución de aguas</h2>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #DBF2E9;'>Siga los pasos para entrenar en nuestros set de modelos de predictivos</h2>", unsafe_allow_html=True)
     components.iframe("https://soluciones.aeroterra.com/portal/apps/webappviewer3d/index.html?id=3e5667a5b5634dfaace558c8e672976d",width=700, height=390) 
-    st.markdown("## Cargar data (archivos .csv o .xlsx)")
+    st.markdown("#### Cargar data (archivos .csv o .xlsx)")
 
 
     #st.markdown("### Carga los CSV.") 
@@ -25,7 +23,7 @@ def app():
     global data
     if uploaded_file is not None:
         try:
-            data = pd.read_csv(uploaded_file,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False)#,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False
+            data = pd.read_csv(uploaded_file,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False)
         except Exception as e:
             print(e)
             data = pd.read_excel(uploaded_file)
