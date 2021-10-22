@@ -11,13 +11,13 @@ warnings.filterwarnings('ignore')
 st.set_page_config(page_title='Centro de entrenamiento GEO-AI',page_icon="🐙",initial_sidebar_state='auto')
 from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo# metadata # redundant # importadores de páginas 
 
-#hide_streamlit_style = """
-#            <style>
-#            #MainMenu {visibility: hidden;}
-#            footer {visibility: hidden;}
-#            </style>
-#            """
-#st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 # instancia de la app 
 app = MultiPage()
 #st.set_page_config (page_title = None, page_icon = None, layout = 'centered', initial_sidebar_state = 'auto')
