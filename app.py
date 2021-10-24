@@ -13,11 +13,11 @@ from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo#
 
 hide_st = """
             <style>
-               .__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after {
-                visibility: hidden !important;}
+               .viewerBadge_link__1S137{
+                visibility: hidden;}
             </style>
           """
-st.markdown(hide_st , unsafe_allow_html=True)
+st.markdown(hide_st, unsafe_allow_html=True)
 
 hide_streamlit_style = """
             <style>
