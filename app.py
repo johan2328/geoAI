@@ -11,6 +11,14 @@ warnings.filterwarnings('ignore')
 st.set_page_config(page_title='Centro de entrenamiento GEO-AI',page_icon="🐙",initial_sidebar_state='auto')
 from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo# metadata # redundant # importadores de páginas 
 
+hide_st = """
+            <style>
+               .__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after {
+                visibility: hidden !important;}
+            </style>
+          """
+st.markdown(hide_st , unsafe_allow_html=True)
+
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
