@@ -13,7 +13,7 @@ from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo#
 
 hide_st = """
             <style>
-                #viewerBadge_link__1S137{
+                #viewerBadge_container__1QSob{
                 visibility: hidden;
                 display: none;}
             </style>
@@ -22,7 +22,7 @@ st.markdown(hide_st, unsafe_allow_html=True)
 
 hide_st2= """
             <style>
-                  #a.viewerBadge_link__1S137 {
+                  #a.viewerBadge_container__1QSob {
                   z-index: 50;
                   font-size: .875rem;
                   position: fixed;
