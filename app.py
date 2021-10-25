@@ -22,14 +22,36 @@ st.markdown(hide_st, unsafe_allow_html=True)
 
 hide_st2= """
             <style>
-                  #a.viewerBadge_container__1QSob {
-                  z-index: 50;
-                  font-size: .875rem;
-                  position: fixed;
-                  bottom: 0;
-                  right: 0;
-                  display: flex;
-                  visibility: hidden;}
+                <style>
+                div[data-testid="stToolbar"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stDecoration"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stStatusWidget"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                #MainMenu {
+                visibility: hidden;
+                height: 0%;
+                }
+                header {
+                visibility: hidden;
+                height: 0%;
+                }
+                footer {
+                visibility: hidden;
+                height: 0%;
+                }
+                </style>
+            """
             </style>
           """
 st.markdown(hide_st2, unsafe_allow_html=True)
