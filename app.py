@@ -22,7 +22,6 @@ st.markdown(hide_st, unsafe_allow_html=True)
 
 hide_st2= """
             <style>
-                <style>
                 div[data-testid="stToolbar"] {
                 visibility: hidden;
                 height: 0%;
@@ -52,8 +51,6 @@ hide_st2= """
                 }
                 </style>
             """
-            </style>
-          """
 st.markdown(hide_st2, unsafe_allow_html=True)
 
 #hide_streamlit_style = """
