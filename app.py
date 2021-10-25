@@ -24,6 +24,7 @@ hide_st2= """
             <style>
                 a[href="https://streamlit.io/cloud"] {
                 visibility: hidden;
+                display: none;
                 height: 0%;
                 position: fixed;
                 }
