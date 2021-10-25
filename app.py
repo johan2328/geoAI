@@ -22,14 +22,14 @@ st.markdown(hide_st, unsafe_allow_html=True)
 
 hide_st2= """
             <style>
-            .viewerBadge_container__1QSob {
-             z-index: 50;
-             font-size: .875rem;
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            display: flex;
-            visibility: hidden;}
+                  a.viewerBadge_container__1QSob {
+                  z-index: 50;
+                  font-size: .875rem;
+                  position: fixed;
+                  bottom: 0;
+                  right: 0;
+                  display: flex;
+                  visibility: hidden;}
             </style>
           """
 st.markdown(hide_st2, unsafe_allow_html=True)
