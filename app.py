@@ -8,7 +8,7 @@ import streamlit.components.v1 as components
 from multipage import MultiPage
 import sys
 warnings.filterwarnings('ignore')
-st.set_page_config(page_title='Centro de entrenamiento GEO-AI',page_icon="🐙",initial_sidebar_state='auto')
+st.set_page_config(page_title='Centro de entrenamiento GEO-AI',initial_sidebar_state='auto')#,page_icon="🐙",
 from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo# metadata # redundant # importadores de páginas 
 
 hide_st = """
