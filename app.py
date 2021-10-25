@@ -28,7 +28,8 @@ hide_st2= """
                 height: 0%;
                 position: fixed;
                 }
-                div[data-testid="stDecoration"] {
+                svg {
+                background-color: beige;
                 visibility: hidden;
                 height: 0%;
                 position: fixed;
