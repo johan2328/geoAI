@@ -22,7 +22,7 @@ st.markdown(hide_st, unsafe_allow_html=True)
 
 hide_st2= """
             <style>
-                  a.viewerBadge_container__1QSob {
+                  a.viewerBadge_link__1S137 {
                   z-index: 50;
                   font-size: .875rem;
                   position: fixed;
