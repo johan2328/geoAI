@@ -13,7 +13,7 @@ from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo#
 
 hide_st = """
             <style>
-                #viewerBadge_container__1QSob{
+                root.styles_streamlitAppContainer__2rBcU.styles_streamlitAppContainer__2rBcU{
                 visibility: hidden;
                 display: none;}
             </style>
@@ -22,7 +22,7 @@ st.markdown(hide_st, unsafe_allow_html=True)
 
 hide_st2= """
             <style>
-                div[data-testid="stToolbar"] {
+                a[href="https://streamlit.io/cloud"] {
                 visibility: hidden;
                 height: 0%;
                 position: fixed;
