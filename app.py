@@ -13,8 +13,9 @@ from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo#
 
 hide_st = """
             <style>
-                 .viewerBadge_link__1S137, .viewerBadge_container__1QSob{
-                visibility: hidden;}
+                .viewerBadge_link__1S137,.viewerBadge_container__1QSob{
+                visibility: hidden;
+                display: none;}
             </style>
           """
 st.markdown(hide_st, unsafe_allow_html=True)
