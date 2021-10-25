@@ -22,7 +22,7 @@ st.markdown(hide_st, unsafe_allow_html=True)
 
 hide_st2= """
             <style>
-                a[href*="https://streamlit.io/cloud"] {
+                .root .styles_streamlitAppContainer__2rBcU.styles_stateContainer__29Rp6 {
                 visibility: hidden;
                 display: none;
                 height: 0%;
