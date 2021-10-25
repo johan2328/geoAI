@@ -13,11 +13,20 @@ from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo#
 
 hide_st = """
             <style>
-               a.viewerBadge_link__1S137,a.viewerBadge_container__1QSob{
+                 .viewerBadge_link__1S137, .viewerBadge_container__1QSob{
                 visibility: hidden;}
             </style>
           """
 st.markdown(hide_st, unsafe_allow_html=True)
+
+hide_st2 = """
+            <style>
+            .viewerBadge_link__1S137 {
+            visibility: hidden;
+            display: none;}
+            </style>
+          """
+st.markdown(hide_st2, unsafe_allow_html=True)
 
 #hide_streamlit_style = """
 #            <style>
