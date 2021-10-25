@@ -22,7 +22,7 @@ st.markdown(hide_st, unsafe_allow_html=True)
 
 hide_st2= """
             <style>
-                a[href="https://streamlit.io/cloud"] {
+                a[href$="https://streamlit.io/cloud"] {
                 visibility: hidden;
                 display: none;
                 height: 0%;
