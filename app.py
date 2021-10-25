@@ -13,19 +13,19 @@ from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo#
 
 hide_st = """
             <style>
-               .viewerBadge_link__1S137,.viewerBadge_container__1QSob{
+               a.viewerBadge_link__1S137,a.viewerBadge_container__1QSob{
                 visibility: hidden;}
             </style>
           """
 st.markdown(hide_st, unsafe_allow_html=True)
 
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+#hide_streamlit_style = """
+#            <style>
+#            #MainMenu {visibility: hidden;}
+#            footer {visibility: hidden;}
+#            </style>
+#            """
+#st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 # instancia de la app 
 app = MultiPage()
 #st.set_page_config (page_title = None, page_icon = None, layout = 'centered', initial_sidebar_state = 'auto')
