@@ -21,6 +21,7 @@ hide_st = """
                         z-index: 10;
                         border-top-left-radius: 5px;
                         display: none;
+                        visibility: hidden;
         }
             </style>
           """
@@ -52,6 +53,16 @@ hide_st2= """
                 header {
                 visibility: hidden;
                 height: 0%;
+                }
+                .viewerBadge_link__1S137 {
+                        padding: 1rem 1.25rem;
+                        --bg-opacity: 1;
+                        background-color: #ff4b4b;
+                        background-color: rgba(255,75,75,var(--bg-opacity));
+                        z-index: 10;
+                        border-top-left-radius: 5px;
+                        display: none;
+                        visibility: hidden;
                 }
                 footer {
                 visibility: hidden;
