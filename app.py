@@ -13,9 +13,15 @@ from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo#
 
 hide_st = """
             <style>
-                root.styles_streamlitAppContainer__2rBcU.styles_streamlitAppContainer__2rBcU{
-                visibility: hidden;
-                display: none;}
+            .viewerBadge_link__1S137 {
+                        padding: 1rem 1.25rem;
+                        --bg-opacity: 1;
+                        background-color: #ff4b4b;
+                        background-color: rgba(255,75,75,var(--bg-opacity));
+                        z-index: 10;
+                        border-top-left-radius: 5px;
+                        display: none;
+        }
             </style>
           """
 st.markdown(hide_st, unsafe_allow_html=True)
