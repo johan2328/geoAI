@@ -209,8 +209,8 @@ def app():
                                         #st.dataframe(tabla_final)
                                         download = FileDownloader(tabla_final.to_csv(),file_ext='csv').download()
                                     
-                                    target_item = gis.content.get("a48f40f410b0426bb8ba93c521f3477b")
-                                    flayer = target_item.layers[0]
+                                    #target_item = gis.content.get("a48f40f410b0426bb8ba93c521f3477b")
+                                    #flayer = target_item.layers[0]
                                     
                                     st.markdown("**6.- Inserción de datos en el tablero **")
                                     if st.button("Insertar"):
@@ -225,12 +225,12 @@ def app():
                                         df = flayer.query().sdf
                                         st.write("insertados!")
 
-                                    components.iframe("https://soluciones.aeroterra.com/portal/apps/opsdashboard/index.html#/950aae7c695846f3a0927f216e687163",width=700, height=820)
+                                    #components.iframe("https://soluciones.aeroterra.com/portal/apps/opsdashboard/index.html#/950aae7c695846f3a0927f216e687163",width=700, height=820)
                                     st.markdown("<p style='text-align: center;'><a href='https://soluciones.aeroterra.com/portal/apps/opsdashboard/index.html#/950aae7c695846f3a0927f216e687163'>Abrir tablero en ventana externa</a></p>", unsafe_allow_html=True) 
                                     
-                                    target_item = gis.content.get("a48f40f410b0426bb8ba93c521f3477b")#   #88615be5d0224a9b9bf3c33532033750
-                                    flayer = target_item.layers[0]
-                                    df = flayer.query().sdf        
+                                    #target_item = gis.content.get("a48f40f410b0426bb8ba93c521f3477b")#   #88615be5d0224a9b9bf3c33532033750
+                                    #flayer = target_item.layers[0]
+                                    #df = flayer.query().sdf        
                                     
                                     st.markdown("**7.- Accediendo a los datos tabulares de la Feature: -Red de distribución- **")
                                     st.write('',df[['id','fecha_instalacion',"material","longitud_millas","diametro_pulgadas","tiempo_vida","ult_fecha_ruptura","costo_usd_ruptura","costo_fut_usd_ruptura","tiempo_faltante"]])
