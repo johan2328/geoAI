@@ -8,7 +8,7 @@ import streamlit.components.v1 as components
 from multipage import MultiPage
 import sys
 warnings.filterwarnings('ignore')
-st.set_page_config(page_title='Centro de entrenamiento GEO-AI',initial_sidebar_state='auto')#,page_icon="🐙",
+st.set_page_config(page_title='Centro de entrenamiento AI',initial_sidebar_state='auto')#,page_icon="🐙",
 from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo# metadata # redundant # importadores de páginas 
 
 hide_st = """
@@ -84,14 +84,14 @@ app = MultiPage()
 #st.set_page_config (page_title = None, page_icon = None, layout = 'centered', initial_sidebar_state = 'auto')
 # main del front
 
-display = Image.open('Logo.png')
+"""display = Image.open('Logo.png')
 display = np.array(display)
 display2 = Image.open('sub_logo.png')
 display2 = np.array(display2)
 col1,col2,col3=st.columns(3)
 col1.image(display, width = 330)
 col2=st.write('')
-col3.image(display2, width = 240)
+col3.image(display2, width = 240)"""
 
 # aplicacion de la app
 app.add_page("Selector de carga",  carga_data.app)
@@ -108,7 +108,7 @@ st.sidebar.write("")
 # ;padding:3px
 html_temp = """
     <div style="background:#040404">
-    <h1 style="color:white;text-align:center; text-shadow:0em 0em 0.6em white"">Centro de entrenamiento GeoAI</h1>
+    <h1 style="color:white;text-align:center; text-shadow:0em 0em 0.6em white"">Centro de entrenamiento AI</h1>
     </div>
     """
 st.markdown(html_temp, unsafe_allow_html = True)
@@ -118,6 +118,6 @@ st.markdown('<br></br>', unsafe_allow_html=True)
 st.markdown('<br></br>', unsafe_allow_html=True)
 
 
-st.sidebar.markdown("<p style='text-align: center;'><a href='https://www.aeroterra.com/es-ar/home'>Powered by Aeroterra</a></p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p style='text-align: center;'><a href='https://www.datco.net/'>Powered by Datco/it4w</a></p>", unsafe_allow_html=True)
 
 
