@@ -1,7 +1,6 @@
 scikit-learn==0.24.2
 pandas==1.2.4
-streamlit>1.0.0
+streamlit>1.19.0
 matplotlib==3.4.2
 seaborn==0.11.1
-numpy==1.20.3
-arcgis==1.9.1
+numpy==1.24.3
