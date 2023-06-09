@@ -175,7 +175,7 @@ rf_pickle.close()
 #map_pickle.close()
 Material = st.selectbox('Material', options=['p1', 'p2'])
 Fecha_instalación = st.number_input('Fecha_instalación', min_value=0)
-Diametro pulgadas = st.number_input('Diametro en pulgadas', min_value=0)
+Diametro_pulgadas = st.number_input('Diametro en pulgadas', min_value=0)
 Longitud_millas = st.number_input('Longitud en millas', min_value=0)
 st.write('Has utilizado las siguientes variales {}'.format(
     [Material, sex, Fecha_instalación,
