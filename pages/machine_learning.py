@@ -178,5 +178,5 @@ Fecha_instalación = st.number_input('Fecha_instalación', min_value=0)
 Diametro_pulgadas = st.number_input('Diametro en pulgadas', min_value=0)
 Longitud_millas = st.number_input('Longitud en millas', min_value=0)
 st.write('Has utilizado las siguientes variales {}'.format(
-    [Material, sex, Fecha_instalación,
-        Diametro pulgadas, Longitud_millas]))
+    [Material, Fecha_instalación,
+        Diametro_pulgadas, Longitud_millas]))
