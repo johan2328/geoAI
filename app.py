@@ -125,9 +125,7 @@ st.markdown(html_temp, unsafe_allow_html = True)
 app.run()
 st.markdown('<br></br>', unsafe_allow_html=True)
 st.markdown('<br></br>', unsafe_allow_html=True)
-st.sidebar.markdown("""
-This is a sidebar with the labels hidden.
-""", hide_labels=True)
+
 
 st.sidebar.markdown("<p style='text-align: center;'><a href='https://www.datco.net/'>Powered by Datco/it4w</a></p>", unsafe_allow_html=True)
 
