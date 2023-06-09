@@ -8,13 +8,14 @@ import streamlit.components.v1 as components
 from multipage import MultiPage
 import sys
 warnings.filterwarnings('ignore')
-"""st.set_page_config(
+st.sidebar.success("Select a demo above.")
+st.set_page_config(
     page_title='Centro de entrenamiento AI-ALlianz',
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="auto",
     menu_items=None
-)"""
+)
 #st.set_page_config(page_title='Centro de entrenamiento AI',initial_sidebar_state="auto", menu_items=None)#,page_icon="🐙",
 #from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo# metadata # redundant # importadores de páginas 
 
