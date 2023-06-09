@@ -100,7 +100,11 @@ col2=st.write('')
 col3.image(display2, width = 200)
 
 # aplicacion de la app
-
+app.add_page("Selector de carga",  carga_data.app)
+app.add_page("Análisis de Datos",visual_data.app)
+app.add_page("Validación ML", ml_validacion.app)
+app.add_page("Formulario ML", ml_formulario.app)
+app.add_page("Predicción masiva ML", ml_masivo.app)
 #app.add_page("Y-Parameter Optimization",redundant.app)
 
 author_pic = Image.open('sidebar3.png')
