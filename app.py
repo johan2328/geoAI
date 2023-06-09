@@ -19,8 +19,19 @@ st.set_page_config(
 #st.set_page_config(page_title='Centro de entrenamiento AI',initial_sidebar_state="auto", menu_items=None)#,page_icon="🐙",
 from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo# metadata # redundant # importadores de páginas 
 st.sidebar.markdown("""
-This is a sidebar with the labels hidden.
-""", hide_labels=True)
+<style>
+.sidebar-header {
+  display: none;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# Create a list of pages
+pages = ["Page 1", "Page 2", "Page 3"]
+
+# Loop through the pages and display them in the sidebar
+for page in pages:
+  st.sidebar.markdown(page)
 hide_st = """
             <style>
             .viewerBadge_link__1S137 {
