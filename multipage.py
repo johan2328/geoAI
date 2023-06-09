@@ -29,7 +29,7 @@ class MultiPage:
                 "function": func
             }
         )
-
+ """
     def run(self):
         # Drodown to select the page to run  
         page = st.sidebar.selectbox(
