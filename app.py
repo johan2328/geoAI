@@ -17,7 +17,7 @@ st.set_page_config(
     menu_items=None
 )
 #st.set_page_config(page_title='Centro de entrenamiento AI',initial_sidebar_state="auto", menu_items=None)#,page_icon="🐙",
-from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo# metadata # redundant # importadores de páginas 
+from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo # metadata # redundant # importadores de páginas 
 hide_st = """
             <style>
             .viewerBadge_link__1S137 {
@@ -78,14 +78,14 @@ hide_st2 = """
                 </style>
        """     
 st.markdown(hide_st2, unsafe_allow_html=True)
-
-hide_streamlit_style = """
+"""
+hide_streamlit_style = 
             <style>
            #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
            </style>
            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+#st.markdown(hide_streamlit_style, unsafe_allow_html=True) """
 # instancia de la app 
 app = MultiPage()
 #st.set_page_config (page_title = None, page_icon = None, layout = 'centered', initial_sidebar_state = 'auto')
