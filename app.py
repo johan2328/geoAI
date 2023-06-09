@@ -91,14 +91,6 @@ app = MultiPage()
 #st.set_page_config (page_title = None, page_icon = None, layout = 'centered', initial_sidebar_state = 'auto')
 # main del front
 
-display = Image.open('grupo datco.png')
-display = np.array(display)
-display2 = Image.open('it4w.png')
-display2 = np.array(display2)
-col1,col2,col3=st.columns(3)
-col1.image(display, width = 300)
-col2=st.write('')
-col3.image(display2, width = 200)
 
 # aplicacion de la app
 app.add_page("Selector de carga",  carga_data.app)
