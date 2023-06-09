@@ -91,7 +91,9 @@ st.markdown(hide_st2, unsafe_allow_html=True)
 app = MultiPage()
 #st.set_page_config (page_title = None, page_icon = None, layout = 'centered', initial_sidebar_state = 'auto')
 # main del front
-
+st.sidebar.markdown("""
+This is a sidebar with the labels hidden.
+""", hide_labels=True)
 display = Image.open('grupo datco.png')
 display = np.array(display)
 display2 = Image.open('it4w.png')
