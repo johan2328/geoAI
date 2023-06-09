@@ -80,13 +80,13 @@ hide_st2 = """
        """     
 st.markdown(hide_st2, unsafe_allow_html=True)
 
-#hide_streamlit_style = """
-#            <style>
-#            #MainMenu {visibility: hidden;}
-#            footer {visibility: hidden;}
-#            </style>
-#            """
-#st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+hide_streamlit_style = """
+            <style>
+           #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+           </style>
+           """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 # instancia de la app 
 app = MultiPage()
 #st.set_page_config (page_title = None, page_icon = None, layout = 'centered', initial_sidebar_state = 'auto')
@@ -112,7 +112,7 @@ app.add_page("Predicción masiva ML", ml_masivo.app)
 author_pic = Image.open('sidebar3.png')
 st.sidebar.image(author_pic,use_column_width=True,width=70)
 
-st.sidebar.write("qqqqqqq")
+st.sidebar.write("")
 # ;padding:3px
 
 html_temp = """
