@@ -9,7 +9,7 @@ from multipage import MultiPage
 import sys
 warnings.filterwarnings('ignore')
 st.set_page_config(
-    page_title='Centro de entrenamiento AI',
+    page_title='Centro de entrenamiento AI-ALlianz',
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="auto",
