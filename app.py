@@ -29,7 +29,7 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 # Create a list of pages
-pages = ["app"]
+pages = ["carga_data.py"]
 
 # Loop through the pages and display them in the sidebar
 for page in pages:
