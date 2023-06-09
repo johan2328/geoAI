@@ -20,15 +20,12 @@ st.set_page_config(
 from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo # metadata # redundant # importadores de páginas 
 
 st.markdown("""
-This is a Streamlit app with the Github icon hidden.
-""")
-
-st.style("""
+<style>
 .github-corner {
   display: none;
 }
+</style>
 """, unsafe_allow_html=True)
-
 
 hide_st = """
             <style>
