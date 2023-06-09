@@ -40,3 +40,4 @@ class MultiPage:
 
         # run the app function 
         page['function']()
+"""
