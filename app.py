@@ -19,6 +19,14 @@ st.set_page_config(
 #st.set_page_config(page_title='Centro de entrenamiento AI',initial_sidebar_state="auto", menu_items=None)#,page_icon="🐙",
 from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo # metadata # redundant # importadores de páginas 
 
+st.sidebar.markdown("""
+<style>
+.sidebar-header {
+  display: none;
+}
+</style>
+""", unsafe_allow_html=True)
+
 st.markdown("""
 <style>
 .github-corner {
