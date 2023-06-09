@@ -22,13 +22,13 @@ class MultiPage:
             
             func: Python function to render this page in Streamlit
         
-
+            """
         self.pages.append(
             {
                 "title": title, 
                 "function": func
             }
-        )"""
+        )
 
     def run(self):
         # Drodown to select the page to run  
