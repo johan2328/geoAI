@@ -8,20 +8,7 @@ import warnings
 from multipage import MultiPage
 import sys
 warnings.filterwarnings('ignore')
-st.sidebar.markdown("""
-<style>
-.sidebar-header {
-  display: none;
-}
-</style>
-""", unsafe_allow_html=True)
 
-# Create a list of pages
-pages = ["carga_data", "ml_validacio","visual_data"]
-
-# Loop through the pages and display them in the sidebar
-for page in pages:
-  st.sidebar.markdown(page)
 #st.sidebar.empty(label=None)
 st.set_page_config(
     page_title='Centro de entrenamiento AI-ALlianz',
