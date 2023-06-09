@@ -23,9 +23,9 @@ timestr = time.strftime("%Y%m%d-%H%M%S")
 
 #st.set_page_config(page_title="GEO-AI Formulario",page_icon="🧊")
 
-portalUrl = "https://soluciones.aeroterra.com/portal"
-username = 'jguerra@ASA'
-password = "Mayo2021*"
+#portalUrl = "https://soluciones.aeroterra.com/portal"
+#username = 'jguerra@ASA'
+#password = "Mayo2021*"
 
 
 """ def generateToken(username, password, portalUrl):
