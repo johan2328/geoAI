@@ -70,7 +70,7 @@ hide_st2=
                 }
                 </style>
             """
-#st.markdown(hide_st2, unsafe_allow_html=True)
+st.markdown(hide_st2, unsafe_allow_html=True)
 
 #hide_streamlit_style = """
 #            <style>
