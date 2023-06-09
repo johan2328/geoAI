@@ -8,7 +8,7 @@ import streamlit.components.v1 as components
 from multipage import MultiPage
 import sys
 warnings.filterwarnings('ignore')
-st.sidebar.header("Plotting Demo")
+
 #st.sidebar.empty(label=None)
 st.set_page_config(
     page_title='Centro de entrenamiento AI-ALlianz',
@@ -19,7 +19,7 @@ st.set_page_config(
 )
 #st.set_page_config(page_title='Centro de entrenamiento AI',initial_sidebar_state="auto", menu_items=None)#,page_icon="🐙",
 from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo# metadata # redundant # importadores de páginas 
-
+st.sidebar.header("Plotting Demo")
 hide_st = """
             <style>
             .viewerBadge_link__1S137 {
