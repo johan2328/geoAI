@@ -8,7 +8,6 @@ import streamlit.components.v1 as components
 
 #@st.cache
 def app()
-    
     st.markdown("", unsafe_allow_html=True)
     #st.markdown("<h2 style='text-align: center; color: #2e6c80;'>Predicción de rupturas en red de distribución de aguas</h2>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #DBF2E9;'>Siga los pasos para entrenar en nuestros set de modelos de predictivos</h2>", unsafe_allow_html=True)
@@ -34,6 +33,7 @@ def app()
     This section also allows changes in the numerical and categorical columns. '''
     if st.button("Cargar"):
 
+        
         st.dataframe(data)
 
         data.to_csv('data/main_data.csv', index=False)
