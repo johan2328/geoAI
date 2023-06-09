@@ -14,7 +14,7 @@ class MultiPage:
         """Constructor class to generate a list which will store all our applications as an instance variable."""
         self.pages = []
     
-    def add_page(self, title, func) -> None: 
+    def add_page(self,  func) -> None: 
         """Class Method to Add pages to the project
 
         Args:
@@ -25,18 +25,18 @@ class MultiPage:
             """
         self.pages.append(
             {
-                "title": title, 
+                #"title": title, 
                 "function": func
             }
         )
 
-    def run(self):"""
+    def run(self):
         # Drodown to select the page to run  
         page = st.sidebar.selectbox(
             'Navegador de páginas', 
             self.pages, 
             format_func=lambda page: page['title']
-        )"""
+        )
 
         # run the app function 
         page['function']()
