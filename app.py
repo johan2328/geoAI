@@ -34,7 +34,7 @@ hide_st = """
           """
 st.markdown(hide_st, unsafe_allow_html=True)
 
-hide_st2= 
+hide_st2 = """
             <style>
                 #root .styles_streamlitAppContainer__2rBcU.styles_stateContainer__29Rp6.viewerBadge_link__1S137{
                 visibility: hidden;
@@ -76,7 +76,7 @@ hide_st2=
                 height: 0%;
                 }
                 </style>
-            
+       """     
 st.markdown(hide_st2, unsafe_allow_html=True)
 
 #hide_streamlit_style = """
