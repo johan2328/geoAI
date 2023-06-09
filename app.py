@@ -4,7 +4,7 @@ import numpy as np
 from PIL import  Image
 import requests
 import warnings
-import streamlit.components.v1 as components
+#import streamlit.components.v1 as components
 from multipage import MultiPage
 import sys
 warnings.filterwarnings('ignore')
@@ -18,73 +18,7 @@ st.set_page_config(
 )
 #st.set_page_config(page_title='Centro de entrenamiento AI',initial_sidebar_state="auto", menu_items=None)#,page_icon="🐙",
 from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo # metadata # redundant # importadores de páginas 
-hide_st = """
-            <style>
-            .viewerBadge_link__1S137 {
-                        padding: 1rem 1.25rem;
-                        --bg-opacity: 1;
-                        background-color: #ff4b4b;
-                        background-color: rgba(255,75,75,var(--bg-opacity));
-                        z-index: 10;
-                        border-top-left-radius: 5px;
-                        display: none;
-                        visibility: hidden;
-        }
-            </style>
-          """
-st.markdown(hide_st, unsafe_allow_html=True)
 
-hide_st2 = """
-            <style>
-                #root .styles_streamlitAppContainer__2rBcU.styles_stateContainer__29Rp6.viewerBadge_link__1S137{
-                visibility: hidden;
-                display: none;
-                height: 0%;
-                position: fixed;
-                }
-                svg {
-                background-color: beige;
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                div[data-testid="stStatusWidget"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                #MainMenu {
-                visibility: hidden;
-                height: 0%;
-                }
-                header {
-                visibility: hidden;
-                height: 0%;
-                }
-                .viewerBadge_link__1S137 {
-                        padding: 1rem 1.25rem;
-                        --bg-opacity: 1;
-                        background-color: #ff4b4b;
-                        background-color: rgba(255,75,75,var(--bg-opacity));
-                        z-index: 10;
-                        border-top-left-radius: 5px;
-                        display: none;
-                        visibility: hidden;
-                }
-                footer {
-                visibility: hidden;
-                height: 0%;
-                }
-                </style>
-       """     
-st.markdown(hide_st2, unsafe_allow_html=True)
-"""
-hide_streamlit_style = 
-            <style>
-           #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-           </style>
-           """
 #st.markdown(hide_streamlit_style, unsafe_allow_html=True) """
 # instancia de la app 
 app = MultiPage()
