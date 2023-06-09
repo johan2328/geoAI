@@ -8,7 +8,7 @@ import streamlit.components.v1 as components
 from multipage import MultiPage
 import sys
 warnings.filterwarnings('ignore')
-st.sidebar.empty(label=None)
+#st.sidebar.empty(label=None)
 st.set_page_config(
     page_title='Centro de entrenamiento AI-ALlianz',
     page_icon="🤖",
