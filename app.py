@@ -105,8 +105,14 @@ hide_st2 = """
        """     
 st.markdown(hide_st2, unsafe_allow_html=True)
 
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-#st.markdown(hide_streamlit_style, unsafe_allow_html=True) """
 # instancia de la app 
 app = MultiPage()
 #st.set_page_config (page_title = None, page_icon = None, layout = 'centered', initial_sidebar_state = 'auto')
