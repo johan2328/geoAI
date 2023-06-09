@@ -14,7 +14,7 @@ class MultiPage:
         """Constructor class to generate a list which will store all our applications as an instance variable."""
         self.pages = []
     
-    def add_page(self,  func) -> None: 
+    def add_page(self, title, func) -> None: 
         """Class Method to Add pages to the project
 
         Args:
@@ -25,7 +25,7 @@ class MultiPage:
             """
         self.pages.append(
             {
-                #"title": title, 
+                "title": title, 
                 "function": func
             }
         )
