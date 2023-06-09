@@ -12,10 +12,10 @@ import base64
 from sklearn.metrics import r2_score
 import streamlit.components.v1 as components
 from IPython.display import display 
-from arcgis.gis import GIS
-from arcgis import GIS
-from arcgis import features
-from arcgis.features import FeatureSet, GeoAccessor
+#from arcgis.gis import GIS
+#from arcgis import GIS
+#from arcgis import features
+#from arcgis.features import FeatureSet, GeoAccessor
 import time
 import requests
 warnings.filterwarnings('ignore')
