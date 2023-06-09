@@ -53,7 +53,17 @@ html_temp = """
     </div>
     """
 st.markdown(html_temp, unsafe_allow_html = True)
+import streamlit as st
 
+st.markdown("""
+This is a Streamlit app with the Github icon hidden.
+""")
+
+st.style("""
+.github-corner {
+  display: none;
+}
+""", unsafe_allow_html=True)
 app.run()
 st.markdown('<br></br>', unsafe_allow_html=True)
 st.markdown('<br></br>', unsafe_allow_html=True)
