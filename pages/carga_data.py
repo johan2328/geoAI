@@ -33,8 +33,7 @@ def app()
     ''' Load the data and save the columns with categories as a dataframe. 
     This section also allows changes in the numerical and categorical columns. '''
     if st.button("Cargar"):
-        
-        # Dataset original
+
         st.dataframe(data)
 
         data.to_csv('data/main_data.csv', index=False)
