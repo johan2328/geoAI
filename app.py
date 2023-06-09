@@ -111,15 +111,15 @@ app.add_page("Predicción masiva ML", ml_masivo.app)
 author_pic = Image.open('sidebar3.png')
 st.sidebar.image(author_pic,use_column_width=True,width=70)
 
-#st.sidebar.write("")
+st.sidebar.write("")
 # ;padding:3px
-"""
-html_temp = 
+
+html_temp = """
     <div style="background:#040404">
     <h1 style="color:white;text-align:center; text-shadow:0em 0em 0.6em white"">Centro de entrenamiento AI</h1>
     </div>
     """
-#st.markdown(html_temp, unsafe_allow_html = True)
+st.markdown(html_temp, unsafe_allow_html = True)
 
 app.run()
 st.markdown('<br></br>', unsafe_allow_html=True)
