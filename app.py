@@ -8,7 +8,7 @@ import streamlit.components.v1 as components
 from multipage import MultiPage
 import sys
 warnings.filterwarnings('ignore')
-st.set_page_config(page_title='Centro de entrenamiento AI',initial_sidebar_state='auto')#,page_icon="🐙",
+st.set_page_config(page_title='Centro de entrenamiento AI'),page_icon="🐙",
 from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo# metadata # redundant # importadores de páginas 
 
 hide_st = """
@@ -26,8 +26,8 @@ hide_st = """
             </style>
           """
 st.markdown(hide_st, unsafe_allow_html=True)
-
-hide_st2= """
+"""
+hide_st2= 
             <style>
                 #root .styles_streamlitAppContainer__2rBcU.styles_stateContainer__29Rp6.viewerBadge_link__1S137{
                 visibility: hidden;
@@ -70,7 +70,7 @@ hide_st2= """
                 }
                 </style>
             """
-st.markdown(hide_st2, unsafe_allow_html=True)
+#st.markdown(hide_st2, unsafe_allow_html=True)
 
 #hide_streamlit_style = """
 #            <style>
@@ -94,8 +94,8 @@ col2=st.write('')
 col3.image(display2, width = 200)
 
 # aplicacion de la app
-#app.add_page("Selector de carga",  carga_data.app)
-#app.add_page("Análisis de Datos",visual_data.app)
+app.add_page("Selector de carga",  carga_data.app)
+app.add_page("Análisis de Datos",visual_data.app)
 app.add_page("Validación ML", ml_validacion.app)
 app.add_page("Formulario ML", ml_formulario.app)
 app.add_page("Predicción masiva ML", ml_masivo.app)
