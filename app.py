@@ -13,6 +13,7 @@ st.set_page_config(
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="auto",
+    menu_items=None
 )
 #st.set_page_config(page_title='Centro de entrenamiento AI',initial_sidebar_state="auto", menu_items=None)#,page_icon="🐙",
 from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo# metadata # redundant # importadores de páginas 
@@ -86,7 +87,7 @@ st.markdown(hide_st2, unsafe_allow_html=True)
 #            """
 #st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 # instancia de la app 
-#app = MultiPage()
+app = MultiPage()
 #st.set_page_config (page_title = None, page_icon = None, layout = 'centered', initial_sidebar_state = 'auto')
 # main del front
 
@@ -110,14 +111,14 @@ app.add_page("Predicción masiva ML", ml_masivo.app)
 author_pic = Image.open('sidebar3.png')
 st.sidebar.image(author_pic,use_column_width=True,width=70)
 
-st.sidebar.write("")
+#st.sidebar.write("")
 # ;padding:3px
-html_temp = """
+#html_temp = """
     <div style="background:#040404">
     <h1 style="color:white;text-align:center; text-shadow:0em 0em 0.6em white"">Centro de entrenamiento AI</h1>
     </div>
     """
-st.markdown(html_temp, unsafe_allow_html = True)
+#st.markdown(html_temp, unsafe_allow_html = True)
 
 app.run()
 st.markdown('<br></br>', unsafe_allow_html=True)
