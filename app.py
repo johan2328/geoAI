@@ -9,15 +9,10 @@ from multipage import MultiPage
 import sys
 warnings.filterwarnings('ignore')
 st.set_page_config(
-    page_title="Ex-stream-ly Cool App",
-    page_icon="🧊",
+    page_title='Centro de entrenamiento AI',
+    page_icon="🤖",
     layout="wide",
-    initial_sidebar_state="expanded",
-    menu_items={
-        'Get Help': 'https://www.extremelycoolapp.com/help',
-        'Report a bug': "https://www.extremelycoolapp.com/bug",
-        'About': "# This is a header. This is an *extremely* cool app!"
-    }
+    initial_sidebar_state="auto",
 )
 #st.set_page_config(page_title='Centro de entrenamiento AI',initial_sidebar_state="auto", menu_items=None)#,page_icon="🐙",
 from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo# metadata # redundant # importadores de páginas 
@@ -91,7 +86,7 @@ st.markdown(hide_st2, unsafe_allow_html=True)
 #            """
 #st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 # instancia de la app 
-app = MultiPage()
+#app = MultiPage()
 #st.set_page_config (page_title = None, page_icon = None, layout = 'centered', initial_sidebar_state = 'auto')
 # main del front
 
