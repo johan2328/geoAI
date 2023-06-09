@@ -89,7 +89,7 @@ st.markdown(hide_st2, unsafe_allow_html=True)
 #st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 # instancia de la app 
 app = MultiPage()
-st.set_page_config (page_title = None, page_icon = None, layout = 'centered', initial_sidebar_state = 'auto')
+#st.set_page_config (page_title = None, page_icon = None, layout = 'centered', initial_sidebar_state = 'auto')
 # main del front
 
 display = Image.open('grupo datco.png')
@@ -112,7 +112,7 @@ app.add_page("Predicción masiva ML", ml_masivo.app)
 author_pic = Image.open('sidebar3.png')
 st.sidebar.image(author_pic,use_column_width=True,width=70)
 
-st.sidebar.write("")
+st.sidebar.write("qqqqqqq")
 # ;padding:3px
 
 html_temp = """
