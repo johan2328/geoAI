@@ -27,7 +27,7 @@ def app():
         except Exception as e:
             print(e)
             data = pd.read_excel(uploaded_file)
-
+    data.to_csv('data/main_data.csv', index=False)
 
     ''' Load the data and save the columns with categories as a dataframe. 
     This section also allows changes in the numerical and categorical columns. '''
@@ -35,9 +35,9 @@ def app():
 
         
         
-
-        data.to_csv('data/main_data.csv', index=False)
         st.dataframe(data)
+        data.to_csv('data/main_data.csv', index=False)
+        
 
         
         numeric_cols = data.select_dtypes(include=['int64']).columns.tolist()
