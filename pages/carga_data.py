@@ -34,10 +34,10 @@ def app():
     if st.button("Cargar"):
 
         
-        st.dataframe(data)
+        
 
         data.to_csv('data/main_data.csv', index=False)
-        
+        st.dataframe(data)
 
         
         numeric_cols = data.select_dtypes(include=['int64']).columns.tolist()
