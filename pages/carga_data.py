@@ -19,7 +19,10 @@ def app():
     #st.markdown("### Carga los CSV.") 
     st.write("\n")
 
-    # Code to read a single file 
+    
+    
+    
+    
     uploaded_file = st.file_uploader("Selecciona el archivo", type = ['csv', 'xlsx'])
     global data
     if uploaded_file is not None:
