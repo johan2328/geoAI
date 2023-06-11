@@ -4,7 +4,7 @@ import pandas as pd
 from pages import utils
 from PIL import  Image
 import streamlit.components.v1 as components        
-import tempfile
+# import tempfile
 
 #@st.cache
 def app():
