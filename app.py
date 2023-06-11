@@ -4,7 +4,7 @@ import numpy as np
 from PIL import  Image
 import requests
 import warnings
-#import streamlit.components.v1 as components
+import streamlit.components.v1 as components
 from multipage import MultiPage
 import sys
 warnings.filterwarnings('ignore')
