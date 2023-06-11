@@ -14,7 +14,7 @@ def app():
     #components.iframe("https://soluciones.aeroterra.com/portal/apps/webappviewer3d/index.html?id=3e5667a5b5634dfaace558c8e672976d",width=700, height=390) 
     st.markdown("#### Cargar data (archivos .csv o .xlsx)")
 
-    uploaded_file = st.file_uploader("Selecciona el archivo", type = ['csv', 'xlsx'])
+    uploaded_file = st.file_uploader("Selecciona el archivo", type = ['csv', 'xlsx'],type='csv', accept_multiple_files=False)
     global data
     if uploaded_file is not None:
         try:
