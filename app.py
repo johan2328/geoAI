@@ -55,7 +55,7 @@ hide_st = """
                         border-top-left-radius: 5px;
                         display: none;
                         visibility: hidden;
-        }
+                                           }
             </style>
           """
 st.markdown(hide_st, unsafe_allow_html=True)
