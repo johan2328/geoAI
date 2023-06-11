@@ -12,7 +12,7 @@ from sklearn.metrics import r2_score
 import streamlit.components.v1 as components
 from IPython.display import display 
 warnings.filterwarnings('ignore')
-timestr = time.strftime("%Y%m%d-%H%M%S")
+
 
 
 # import tempfile
