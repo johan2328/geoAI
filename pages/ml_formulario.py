@@ -80,7 +80,7 @@ class FileDownloader(object):
 	"""docstring for FileDownloader
 	>>> download = FileDownloader(data,filename,file_ext).download()
 	"""
-	def __init__(self, data,filename='myfile',file_ext='txt'):
+	def __init__(self, data,filename='myfile',file_ext='csv'):
 		super(FileDownloader, self).__init__()
 		self.data = data
 		self.filename = filename
