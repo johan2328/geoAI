@@ -119,7 +119,7 @@ app = MultiPage()
 # main del front
 display = Image.open('grupo datco.png')
 display = np.array(display)
-display2 = Image.open('it4w.png')
+display2 = Image.open('allianz.png')
 display2 = np.array(display2)
 col1,col2,col3=st.columns(3)
 col1.image(display, width = 300)
