@@ -23,7 +23,7 @@ def app():
 
     # Code to read a single file 
     uploaded_file = st.file_uploader("Selecciona el archivo", type = ['csv', 'xlsx'])
-    global data
+    #global data
     if uploaded_file is not None:
         try:
             data = pd.read_csv(uploaded_file,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False)
