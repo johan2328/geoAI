@@ -12,7 +12,6 @@ def text_downloader(raw_text):
 	href = f'<a href="data:file/txt;base64,{b64}" download="{new_filename}">Click Here!!</a>'
 	st.markdown(href,unsafe_allow_html=True)
 
-
 def csv_downloader(data):
 	csvfile = data.to_csv()
 	b64 = base64.b64encode(csvfile.encode()).decode()
