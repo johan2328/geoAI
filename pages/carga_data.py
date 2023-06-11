@@ -13,8 +13,7 @@ def app():
     st.markdown("<p style='text-align: center; color: #DBF2E9;'>Siga los pasos para entrenar en nuestros set de modelos de predictivos</h2>", unsafe_allow_html=True)
     #components.iframe("https://soluciones.aeroterra.com/portal/apps/webappviewer3d/index.html?id=3e5667a5b5634dfaace558c8e672976d",width=700, height=390) 
     st.markdown("#### Cargar data (archivos .csv o .xlsx)")
-    st.dataframe(data)
-    data.to_csv('data/main_data.csv', index=False)
+    uploaded_files = st.file_uploader("Please choose a CSV file", accept_multiple_files=True)
     for file in uploaded_files:
 
     bytes_data = file.read()
