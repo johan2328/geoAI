@@ -69,10 +69,18 @@ def app():
     This section also allows changes in the numerical and categorical columns. '''
     
     if st.button("Cargar"):
-       
+          
+        file_content = st.read_csv(temp_file_path)
+    else:
+         file_content = st.read_csv(uploaded_file.name)
+
+# Display the file content
+        st.write(file_content)
         
-        st.dataframe(data)
-        data.to_csv('data/main_data.csv', index=False)
+        
+        #st.dataframe(data)
+        #data.to_csv('data/main_data.csv', index=False)
+        
         
 
         
