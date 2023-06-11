@@ -3,7 +3,18 @@ import numpy as np
 import pandas as pd
 from pages import utils
 from PIL import  Image
-import streamlit.components.v1 as components        
+import streamlit.components.v1 as components    
+import warnings
+import pickle
+import streamlit.components as stc
+import base64
+from sklearn.metrics import r2_score
+import streamlit.components.v1 as components
+from IPython.display import display 
+warnings.filterwarnings('ignore')
+timestr = time.strftime("%Y%m%d-%H%M%S")
+
+
 # import tempfile
 def text_downloader(raw_text):
 	b64 = base64.b64encode(raw_text.encode()).decode()
