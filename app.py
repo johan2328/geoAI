@@ -134,7 +134,7 @@ app.add_page("Formulario ML", ml_formulario.app)
 app.add_page("Predicción masiva ML", ml_masivo.app)
 #app.add_page("Y-Parameter Optimization",redundant.app)
 
-author_pic = Image.open('sidebar3.png')
+author_pic = Image.open('microsoft-partner.png')
 st.sidebar.image(author_pic,use_column_width=True,width=70)
 
 st.sidebar.write("")
