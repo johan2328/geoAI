@@ -1,0 +1,9 @@
+column_name,type
+ubicación,categorical
+Genero,categorical
+edad,numerical
+Nombre_auto,categorical
+Año_vehiculo,categorical
+Millas_auto,numerical
+Precio_auto,numerical
+Precio_poliza,numerical
