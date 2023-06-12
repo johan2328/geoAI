@@ -82,13 +82,12 @@ def app():
             print(e)
             data = pd.read_excel(uploaded_file)
     if st.checkbox("Cargar", False):
-        #data1 = data.drop(["Precio_auto"], axis = 1)
+        data = data.drop(["Tiempo_vida","others"], axis = 1)
         st.write("Set de datos original", data)    
 
-        dummy_ubicacion = pd.get_dummies(data["ubicación"], prefix = "ubicación")
-	dummy_genero = pd.get_dummies(data["Genero"], prefix = "Genero")
-	dummy_Nombre_auto = pd.get_dummies(data["Nombre_auto"], prefix = "Nombre_auto")
-	dummy_Tipo_poliza = pd.get_dummies(data["Tipo_poliza"], prefix = "Tipo_poliza")
+        dummy_Material = pd.get_dummies(data["Material"], prefix = "Material")
+
+        data1 = data.drop(["Material","id","oid","Fecha_instalacion"], axis = 1)
 	
         #data1 = data.drop(["Material","id","oid","Fecha_instalacion"], axis = 1)
         data2 = pd.concat([data,dummy_ubicacion,dummy_genero,dummy_Nombre_auto,dummy_Tipo_poliza], axis = 1)
