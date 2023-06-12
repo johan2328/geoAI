@@ -75,7 +75,7 @@ def app():
          file_content = st.read_csv(uploaded_file.name)
 
 # Display the file content
-        st.write(file_content)
+    st.write(file_content)
         
         
         #st.dataframe(data)
