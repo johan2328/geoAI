@@ -82,7 +82,7 @@ def app():
             print(e)
             data = pd.read_excel(uploaded_file)
     if st.checkbox("Cargar", False):
-        data = data.drop(["Millas_auto"], axis = 1)
+        #data = data.drop(["Millas_auto"], axis = 1)
         st.write("Set de datos original", data)    
 
         dummy_Genero = pd.get_dummies(data["Genero"], prefix = "Genero")
