@@ -77,12 +77,12 @@ def app():
     global data
     if uploaded_file is not None:
         try:
-            data = pd.read_csv(uploaded_file,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False) #,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False
+            data1 = pd.read_csv(uploaded_file,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False) #,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False
         except Exception as e:
             print(e)
-            data = pd.read_excel(uploaded_file)
+            data1 = pd.read_excel(uploaded_file)
     if st.checkbox("Cargar", False):
-        data1 = data.drop(["Precio_auto"], axis = 1)
+        #data1 = data.drop(["Precio_auto"], axis = 1)
         st.write("Set de datos original", data)    
 
         dummy_ubicacion = pd.get_dummies(data["ubicación"], prefix = "ubicación")
@@ -95,7 +95,7 @@ def app():
         prediction_df = pd.DataFrame(data2)
         prediction = modelo.predict(prediction_df)
         predict_final = pd.DataFrame(prediction)
-        predict_final.rename(columns ={0: "Predict_tiempo_vida"}, inplace = True)
+        predict_final.rename(columns ={0: "Prediccion"}, inplace = True)
         if st.checkbox("Predecir", False):
             with st.spinner('Espere por favor...'):
                 time.sleep(3)
