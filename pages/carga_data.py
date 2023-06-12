@@ -55,7 +55,7 @@ def app():
     st.markdown("<p style='text-align: center; color: #DBF2E9;'>Siga los pasos para entrenar en nuestros set de modelos de predictivos</h2>", unsafe_allow_html=True)
     #components.iframe("https://soluciones.aeroterra.com/portal/apps/webappviewer3d/index.html?id=3e5667a5b5634dfaace558c8e672976d",width=700, height=390) 
     global data
-    temp_file_path = data.to_csv('data/main_data.csv', index=False)
+    #temp_file_path = data.to_csv('data/main_data.csv', index=False)
     #st.markdown("### Carga los CSV.") 
     st.write("\n")
     st.markdown("#### Cargar data (archivos .csv o .xlsx)")
@@ -70,17 +70,10 @@ def app():
             data = pd.read_excel(uploaded_file)
 
     if st.button("Cargar"):
-        if file_input is None:
-            file_content = st.read_csv(temp_file_path)
-        else:
-            file_content = st.read_csv(uploaded_file.name)
 
-# Display the file content
-        st.write(file_content)
         
-        
-        #st.dataframe(data)
-        #data.to_csv('data/main_data.csv', index=False)
+        st.dataframe(data)
+        data.to_csv('data/main_data.csv', index=False)
 
         numeric_cols = data.select_dtypes(include=['int64']).columns.tolist()
         categorical_cols = list(set(list(data.columns)) - set(numeric_cols))
