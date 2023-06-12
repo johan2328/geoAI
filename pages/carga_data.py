@@ -64,26 +64,20 @@ def app():
         except Exception as e:
             print(e)
             data = pd.read_excel(uploaded_file)
-    
-    ''' Load the data and save the columns with categories as a dataframe. 
-    This section also allows changes in the numerical and categorical columns. '''
-    
-    if st.button("Cargar"):
+
+        if st.button("Cargar"):
           
         file_content = st.read_csv(temp_file_path)
     else:
          file_content = st.read_csv(uploaded_file.name)
 
 # Display the file content
-    	st.write(file_content)
+    	#st.write(file_content)
         
         
         #st.dataframe(data)
         #data.to_csv('data/main_data.csv', index=False)
-        
-        
 
-        
         numeric_cols = data.select_dtypes(include=['int64']).columns.tolist()
         categorical_cols = list(set(list(data.columns)) - set(numeric_cols))
         
