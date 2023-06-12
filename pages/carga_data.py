@@ -65,14 +65,14 @@ def app():
             print(e)
             data = pd.read_excel(uploaded_file)
 
-        if st.button("Cargar"):
-          
-        file_content = st.read_csv(temp_file_path)
-    else:
-         file_content = st.read_csv(uploaded_file.name)
+    if st.button("Cargar"):
+        if file_input is None:
+            file_content = st.read_csv(temp_file_path)
+        else:
+            file_content = st.read_csv(uploaded_file.name)
 
 # Display the file content
-    	#st.write(file_content)
+        st.write(file_content)
         
         
         #st.dataframe(data)
