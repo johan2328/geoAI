@@ -82,7 +82,7 @@ def app():
             print(e)
             data = pd.read_excel(uploaded_file)
     if st.checkbox("Cargar", False):
-        data = data.drop(["Tiempo_vida","others"], axis = 1)
+        #data = data.drop(["Tiempo_vida","others"], axis = 1)
         st.write("Set de datos original", data)    
 
         dummy_ubicación = pd.get_dummies(data["ubicación"], prefix = "ubicación")
