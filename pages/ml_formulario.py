@@ -107,7 +107,7 @@ def app():
                     modelo = pickle.load(open('data/metadata/regresion_lineal.pickle', 'rb'))
                     return modelo
             modelo = load_model()
-            Material = st.selectbox('Material',options=[   
+            Material = st.selectbox('Valor 1',options=[   
                                 'Plomo','Polietileno','Cobre','Hierro fundido','Hierro ductil','Cloruro de polivinilo','Hierro Galvanizado/Polietileno de alta densidad','Alta densidad plomo']) #'Cast Iron','Polyvinyl Chloride','Galvanized IronHigh-Density Polyethylene','High Probability Lead','Ductile Iron'])#,'Polyvinyl Chloride','Galvanized IronHigh-Density Polyethylene','High Probability Lead','Ductile Iron','Polyethylene','Copper'
             Material_Lead, Material_Polyethylene,Material_Copper,Material_Ductile_Iron,Material_Polyvinyl_Chloride,Material_Cast_Iron,Material_High_Probability_Lead,Material_Galvanized_IronHigh_Density_Polyethylene=0,0,0,0,0,0,0,0 #Material_Galvanized IronHigh-Density Polyethylene,Material_Polyvinyl Chloride,Material_High Probability Lead,Material_Ductile Iron, = 0,0,0,0,0,0,0,0 #,Material_Cast_Iron,Material_Galvanized_IronHigh_Density_Polyethylene,Material_Polyvinyl_Chloride,Material_High_Probability_Lead,Material_Ductile_Iron,Material_Polyethylene, Material_Copper
             if (Material == 'Plomo'):
@@ -126,9 +126,9 @@ def app():
                 Material_High_Probability_Lead = 1
             elif (Material == 'Hierro ductil'):
                 Material_Ductile_Iron = 1
-            Longitud_millas = st.number_input('Longitud en millas',value=1.)
-            Diametro_pulgadas = st.number_input('Diametro en pulgadas',value=1.) 
-            Fecha_instalacion = st.date_input('Fecha de instalación')
+            Longitud_millas = st.number_input('Valor 2',value=1.) #Longitud en millas
+            Diametro_pulgadas = st.number_input('Valor 3',value=1.) # Diametro en pulgadas
+            Fecha_instalacion = st.date_input(' Valor 4') #Fecha de instalación
             #st.write('Los valores ingresados son los siguientes {}'.format(
                     #[Material,Longitud_millas,
                     #Diametro_pulgadas,Fecha_instalacion]))
