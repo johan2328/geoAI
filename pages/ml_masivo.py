@@ -86,7 +86,7 @@ def app():
         st.write("Set de datos original", data1)    
 
         dummy_ubicacion = pd.get_dummies(data1["ubicación"], prefix = "ubicación")
-	dummy_genero = pd.get_dummies(data1["Genero"], prefix = "genero")
+	dummy_genero = pd.get_dummies(data1["Genero"], prefix = "Genero")
 	dummy_Nombre_auto = pd.get_dummies(data1["Nombre_auto"], prefix = "Nombre_auto")
 	dummy_Tipo_poliza = pd.get_dummies(data1["Tipo_poliza"], prefix = "Tipo_poliza")
 	
