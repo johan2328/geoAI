@@ -82,15 +82,15 @@ def app():
             print(e)
             data = pd.read_excel(uploaded_file)
     if st.checkbox("Cargar", False):
-        data = data.drop(["Tiempo_vida","others"], axis = 1)
+        data = data.drop(["Millas_auto"], axis = 1)
         st.write("Set de datos original", data)    
 
-        dummy_Material = pd.get_dummies(data["Material"], prefix = "Material")
+        dummy_Genero = pd.get_dummies(data["Genero"], prefix = "Genero")
 
         data1 = data.drop(["Material","id","oid","Fecha_instalacion"], axis = 1)
 	
         #data1 = data.drop(["Material","id","oid","Fecha_instalacion"], axis = 1)
-        data2 = pd.concat([data,dummy_ubicacion,dummy_genero,dummy_Nombre_auto,dummy_Tipo_poliza], axis = 1)
+        data2 = pd.concat([data,dummy_Genero], axis = 1)
         prediction_df = pd.DataFrame(data2)
         prediction = modelo.predict(prediction_df)
         predict_final = pd.DataFrame(prediction)
