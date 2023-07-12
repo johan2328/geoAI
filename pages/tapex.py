@@ -65,14 +65,6 @@ class FileDownloader(object):
 
 #@st.cache
 def app():
-    st.title("Falcon-40B Demo")
-    prompt = st.text_input("ingresa tu prompt aqui:")
-    if prompt:
-	max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
-	output = generate_text(prompt, max_length)
-	st.write(output)
-    
-
     st.markdown("", unsafe_allow_html=True)
     #st.markdown("<h2 style='text-align: center; color: #2e6c80;'>Predicción de rupturas en red de distribución de aguas</h2>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #DBF2E9;'>Siga los pasos para entrenar en nuestros set de modelos de predictivos</h2>", unsafe_allow_html=True)
@@ -92,11 +84,14 @@ def app():
         except Exception as e:
             print(e)
             data = pd.read_excel(uploaded_file)
-
+    st.title("Falcon-40B Demo")
+    prompt = st.text_input("ingresa tu prompt aqui:")
+    if prompt:
+	max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
+	output = generate_text(prompt, max_length)
+	st.write(output)
     if st.button("Cargar"):
-
-        
-        st.dataframe(data)
+	st.dataframe(data)
         data.to_csv('data/main_data.csv', index=False)
 
         numeric_cols = data.select_dtypes(include=['int64']).columns.tolist()
