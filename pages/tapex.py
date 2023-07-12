@@ -123,8 +123,8 @@ def app():
 
         st.markdown("Pregunta a la tabla")
 	prompt = st.text_input("ingresa tu prompt aqui:")
-            if prompt:
-                max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
-                output = generate_text(prompt, max_length)
-                st.write(output)
+	    if prompt:
+		    max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
+		    output = generate_text(prompt, max_length)
+		    st.write(output)
 
