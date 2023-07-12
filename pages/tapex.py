@@ -83,6 +83,7 @@ def app():
 	max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
 	output = generate_text(prompt, max_length)
 	st.write(output)
+
     if uploaded_file is not None:
         try:
             data = pd.read_csv(uploaded_file,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False) #,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False
