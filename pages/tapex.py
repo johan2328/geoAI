@@ -66,11 +66,11 @@ class FileDownloader(object):
 #@st.cache
 def app():
     st.title("Falcon-40B Demo")
-	prompt = st.text_input("ingresa tu prompt aqui:")
-	    if prompt:
-		    max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
-		    output = generate_text(prompt, max_length)
-		    st.write(output)
+    prompt = st.text_input("ingresa tu prompt aqui:")
+    if prompt:
+	max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
+	output = generate_text(prompt, max_length)
+	st.write(output)
     
 
     st.markdown("", unsafe_allow_html=True)
