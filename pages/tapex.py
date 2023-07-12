@@ -12,22 +12,22 @@ from transformers import TapexTokenizer, BartForConditionalGeneration
 from transformers import AutoTokenizer,AutoModelForQuestionAnswering
 from transformers.pipelines import pipeline
 from transformers import pipeline
-warnings.filterwarnings('ignore')
+warnings.filterwarnings('ignore')                   
 
 @st.experimental_singlenton
 def model_generator():
 	generator = pipeline('text-generation', model='EleutherAI/gpt-neo-125M')
-	return = generator
+	return generator
 
 @st.experimental_singlenton
 def model_translator_en_es():
 	translator = pipeline('translation', model='Helsinki-NLP/opus-mt-en-es')
-	return = translator
+	return translator
 
 @st.experimental_singlenton
 def model_translator_es_en():
 	translator = pipeline('translation', model='Helsinki-NLP/opus-mt-es-en')
-	return = translator
+	return translator
 #st.cache(show_spinner=False)
 #def load_model():
 #    tokenizer = AutoTokenizer.from_pretrained("twmkn9/distilbert-  base-uncased-squad2")
