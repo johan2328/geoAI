@@ -84,12 +84,7 @@ def app():
         except Exception as e:
             print(e)
             data = pd.read_excel(uploaded_file)
-    st.title("Falcon-40B Demo")
-    prompt = st.text_input("ingresa tu prompt aqui:")
-    if prompt:
-	max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
-	output = generate_text(prompt, max_length)
-	st.write(output)
+
     if st.button("Cargar"):
 	st.dataframe(data)
         data.to_csv('data/main_data.csv', index=False)
