@@ -7,21 +7,31 @@ import streamlit.components.v1 as components
 import warnings
 import streamlit.components as stc
 import base64
+import transformers
 from IPython.display import display 
-from transformers import TapexTokenizer, BartForConditionalGeneration
+from transformers import TapexTokenizer, BartForConditionalGeneration, AutoModelForCausalLM
 from transformers import AutoTokenizer,AutoModelForQuestionAnswering
 from transformers.pipelines import pipeline
 from transformers import pipeline
 import torch
 warnings.filterwarnings('ignore')                   
 
+st.title("Falcon-40B Demo")
+
+model_name = "tiiuae/falcon-40b"
+generator = pipeline('text-generation', model=model_name)
+
+prompt = st.text_input("ingresa tu prompt aqui:")
+if prompt:
+    output = generator(prompt, max_length=550)
+    st.write(output[0]['generated_text'])
 
 @st.cache_resource
 def load_model():
-    tokenizer = AutoTokenizer.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
-    model = AutoModelForQuestionAnswering.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
-    nlp_pipe = pipeline('question-answering',model=model,tokenizer=tokenizer)
-    return nlp_pipe
+	tokenizer = AutoTokenizer.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
+	model = AutoModelForQuestionAnswering.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
+	nlp_pipe = pipeline('question-answering',model=model,tokenizer=tokenizer)
+	return nlp_pipe
 
 # import tempfile
 def text_downloader(raw_text):
