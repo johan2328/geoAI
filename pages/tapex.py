@@ -91,7 +91,10 @@ def app():
 
         # Display de columnas
         st.markdown("**Nombre de columna**-**Tipo de dato**")
-	query = st.text_input("detalle de la tabla")
+	query = st.text_input(
+        "Placeholder for the other text input widget",
+        "Cargar texto",
+        key="placeholder")
 	st.write("", query)
         for i in range(columns_df.shape[0]):
             st.write(f"{i+1}. **{columns_df.iloc[i]['column_name']}** - {columns_df.iloc[i]['type']}")
