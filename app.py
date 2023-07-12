@@ -17,7 +17,7 @@ st.set_page_config(
     menu_items=None
 )
 #st.set_page_config(page_title='Centro de entrenamiento AI',initial_sidebar_state="auto", menu_items=None)#,page_icon="🐙",
-from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo # metadata # redundant # importadores de páginas 
+from pages import carga_data, ml_validacion,visual_data,ml_formulario,ml_masivo,tapex # metadata # redundant # importadores de páginas 
 
 # Remove the icon
 st.markdown("""
