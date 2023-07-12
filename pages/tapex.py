@@ -91,29 +91,27 @@ def app():
 	    numeric_cols = data.select_dtypes(include=['int64']).columns.tolist()
 	    categorical_cols = list(set(list(data.columns)) - set(numeric_cols))
 	    
-	# Salvar las columnas en un diccionario
-	columns = []
-
-        # Iterate 
-        try:
-            columns = utils.genMetaData(data)
-            #clean_dataset(columns)
-        except Exception as e:
-            print("Revisar sus valores en archivo: {}".format(e))
-   
-        # Save las columnas como un dataframe de categorias 
-        # Here column_name is the name of the field and the type is whether it's numerical or categorical
-        columns_df = pd.DataFrame(columns, columns = ['column_name', 'type'])
-        columns_df.to_csv('data/metadata/column_type_desc.csv', index = False)
-
-        # Display de columnas
-        st.markdown("**Nombre de columna**-**Tipo de dato**")
+	    columns = []
+	        # Iterate 
+	        try:
+	            columns = utils.genMetaData(data)
+	            #clean_dataset(columns)
+	        except Exception as e:
+	            print("Revisar sus valores en archivo: {}".format(e))
+	   
+	        # Save las columnas como un dataframe de categorias 
+	        # Here column_name is the name of the field and the type is whether it's numerical or categorical
+	        columns_df = pd.DataFrame(columns, columns = ['column_name', 'type'])
+	        columns_df.to_csv('data/metadata/column_type_desc.csv', index = False)
 	
-        for i in range(columns_df.shape[0]):
-            st.write(f"{i+1}. **{columns_df.iloc[i]['column_name']}** - {columns_df.iloc[i]['type']}")
-        
-        st.markdown("Los anteriores son los tipos de columna automatizados detectados por la aplicación en los datos.") 
-
-        st.markdown("Pregunta a la tabla")
+	        # Display de columnas
+	        st.markdown("**Nombre de columna**-**Tipo de dato**")
+		
+	        for i in range(columns_df.shape[0]):
+	            st.write(f"{i+1}. **{columns_df.iloc[i]['column_name']}** - {columns_df.iloc[i]['type']}")
+	        
+	        st.markdown("Los anteriores son los tipos de columna automatizados detectados por la aplicación en los datos.") 
+	
+	        st.markdown("Pregunta a la tabla")
 
 
