@@ -56,10 +56,11 @@ class FileDownloader(object):
 		st.markdown(href,unsafe_allow_html=True)
 #@st.cache
 def app():
+    npl_pipe = load_model()
     question = st.text_input(label='Insert a question.')
     text = st.text_area(label="Context")
     if (not len(text)==0) and not (len(question)==0):
-     	x_dict = npl_pipe(context=text,question=question
+	x_dict = npl_pipe(context=text,question=question)
     	st.text('Answer: ',x_dict['answer'])
 			  
     st.markdown("", unsafe_allow_html=True)
