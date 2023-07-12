@@ -60,8 +60,8 @@ def app():
     question = st.text_input(label='Insert a question.')
     text = st.text_area(label="Context")
     if (not len(text)==0) and not (len(question)==0):
-	x_dict = npl_pipe(context=text,question=question)
-    	st.text('Answer: ',x_dict['answer'])
+	    x_dict = npl_pipe(context=text,question=question)
+    	    st.text('Answer: ',x_dict['answer'])
 			  
     st.markdown("", unsafe_allow_html=True)
     #st.markdown("<h2 style='text-align: center; color: #2e6c80;'>Predicción de rupturas en red de distribución de aguas</h2>", unsafe_allow_html=True)
