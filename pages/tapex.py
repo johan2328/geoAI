@@ -86,7 +86,7 @@ def app():
             data = pd.read_excel(uploaded_file)
 
     if st.button("Cargar"):
-		st.dataframe(data)
+	    st.dataframe(data)
         data.to_csv('data/main_data.csv', index=False)
 
         numeric_cols = data.select_dtypes(include=['int64']).columns.tolist()
