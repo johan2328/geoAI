@@ -19,14 +19,14 @@ warnings.filterwarnings('ignore')
 st.title("Falcon-40B Demo")
 
 model_name = "tiiuae/falcon-40b"
-generator = pipeline('text-generation', model=model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
 
-prompt = st.text_input("ingresa tu prompt aqui:")
+prompt = st.text_input("Enter your prompt here:")
 if prompt:
-    output = generator(prompt, max_length=550)
-    st.write(output[0]['generated_text'])
-
-
+    input_ids = tokenizer.encode(prompt, return_tensors="pt")
+    output = model.generate(input_ids=input_ids, max_length=850)
+    st.write(tokenizer.decode(output[0], skip_special_tokens=True))
 
 # import tempfile
 def text_downloader(raw_text):
