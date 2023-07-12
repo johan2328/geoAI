@@ -11,6 +11,9 @@ from IPython.display import display
 from transformers import TapexTokenizer, BartForConditionalGeneration
 warnings.filterwarnings('ignore')
 
+tokenizer = TapexTokenizer.from_pretrained("microsoft/tapex-base-finetuned-wikisql")
+model = BartForConditionalGeneration.from_pretrained("microsoft/tapex-base-finetuned-wikisql")
+
 # import tempfile
 def text_downloader(raw_text):
 	b64 = base64.b64encode(raw_text.encode()).decode()
@@ -98,9 +101,6 @@ def app():
             st.write(f"{i+1}. **{columns_df.iloc[i]['column_name']}** - {columns_df.iloc[i]['type']}")
         
         st.markdown("Los anteriores son los tipos de columna automatizados detectados por la aplicación en los datos.") 
-
-        tokenizer = TapexTokenizer.from_pretrained("microsoft/tapex-base-finetuned-wikisql")
-        model = BartForConditionalGeneration.from_pretrained("microsoft/tapex-base-finetuned-wikisql")
 
         st.markdown("Pregunta a la tabla")
 	
