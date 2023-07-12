@@ -67,11 +67,7 @@ class FileDownloader(object):
 def app():
     st.title("Falcon-40B Demo")
 
-    prompt = st.text_input("Enter your prompt here:")
-    if prompt:
-	max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
-	output = generate_text(prompt, max_length)
-	st.write(output)
+    
 
     st.markdown("", unsafe_allow_html=True)
     #st.markdown("<h2 style='text-align: center; color: #2e6c80;'>Predicción de rupturas en red de distribución de aguas</h2>", unsafe_allow_html=True)
@@ -81,8 +77,7 @@ def app():
     #temp_file_path = data.to_csv('data/main_data.csv', index=False)
     #st.markdown("### Carga los CSV.") 
     st.write("\n")
-    query = st.text_input("Placeholder for the other text input widget","Cargar texto", key="placeholder")
-    st.write("", query)
+
     st.markdown("#### Cargar data (archivos .csv o .xlsx)")
      
     uploaded_file = st.file_uploader("Selecciona el archivo", type = ['csv', 'xlsx'])
@@ -127,5 +122,9 @@ def app():
         st.markdown("Los anteriores son los tipos de columna automatizados detectados por la aplicación en los datos.") 
 
         st.markdown("Pregunta a la tabla")
-	
+	prompt = st.text_input("ingresa tu prompt aqui:")
+            if prompt:
+                    max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
+                    output = generate_text(prompt, max_length)
+                    st.write(output)
 
