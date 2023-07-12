@@ -71,11 +71,13 @@ class FileDownloader(object):
 		href = f'<a href="data:file/{self.file_ext};base64,{b64}" download="{new_filename}">Click aqui!!</a>'
 		st.markdown(href,unsafe_allow_html=True)
 
-generator = model_generator()
-translator_es_en = model_translator_es_en()
-translator_en_es= model_translator_en_es()
+
 #@st.cache
 def app():
+    generator = model_generator()
+	translator_es_en = model_translator_es_en()
+	translator_en_es= model_translator_en_es()
+
     prompt_es=st.text_area('Texto a generar','Insertar texto aqui')
     prompt_en=translator_es_en(prompt_es)
 	
