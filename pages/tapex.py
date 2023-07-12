@@ -15,17 +15,17 @@ from transformers import pipeline
 import torch
 warnings.filterwarnings('ignore')                   
 
-@st.experimental_singleton
+@st.cache_resource
 def model_generator():
 	generator = pipeline('text-generation', model='EleutherAI/gpt-neo-125M')
 	return generator
 
-@st.experimental_singleton
+@st.cache_resource
 def model_translator_en_es():
 	translator = pipeline('translation', model='Helsinki-NLP/opus-mt-en-es')
 	return translator
 
-@st.experimental_singleton
+@st.cache_resource
 def model_translator_es_en():
 	translator = pipeline('translation', model='Helsinki-NLP/opus-mt-es-en')
 	return translator
