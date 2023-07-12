@@ -91,6 +91,8 @@ def app():
 
         # Display de columnas
         st.markdown("**Nombre de columna**-**Tipo de dato**")
+	query = st.text_input("detalle de la tabla")
+	st.write("", query)
         for i in range(columns_df.shape[0]):
             st.write(f"{i+1}. **{columns_df.iloc[i]['column_name']}** - {columns_df.iloc[i]['type']}")
         
@@ -100,8 +102,7 @@ def app():
         model = BartForConditionalGeneration.from_pretrained("microsoft/tapex-base-finetuned-wikisql")
 
         st.markdown("Pregunta a la tabla")
-	query = st.text_input("detalle de la tabla")
-	    st.write("", query)
+	
         encoding = tokenizer(table=data, query=query, return_tensors="pt")
     
         outputs = model.generate(**encoding, max_new_tokens=2000)
