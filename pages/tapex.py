@@ -71,7 +71,6 @@ class FileDownloader(object):
 		href = f'<a href="data:file/{self.file_ext};base64,{b64}" download="{new_filename}">Click aqui!!</a>'
 		st.markdown(href,unsafe_allow_html=True)
 
-
 #@st.cache
 def app():
     generator = model_generator()
