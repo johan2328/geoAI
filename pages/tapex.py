@@ -101,7 +101,7 @@ def app():
 
         st.markdown("Pregunta a la tabla")
 	#query = ""
-	st.write("", query)
+	#st.write("", query)
         encoding = tokenizer(table=data, query=query, return_tensors="pt")
     
         outputs = model.generate(**encoding, max_new_tokens=2000)
