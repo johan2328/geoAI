@@ -17,25 +17,28 @@ warnings.filterwarnings('ignore')
 
 @st.cache_resource
 def model_generator():
-	generator = pipeline('text-generation', model='EleutherAI/gpt-neo-125M')
+	tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neo-125M")
+	generator = pipeline('text-generation', model='EleutherAI/gpt-neo-125M',tokenizer=tokenizer)
 	return generator
 
 @st.cache_resource
 def model_translator_en_es():
-	translator = pipeline('translation', model='Helsinki-NLP/opus-mt-en-es')
+	tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-es-en")
+	translator = pipeline('translation', model='Helsinki-NLP/opus-mt-en-es',tokenizer=tokenizer)
+	
 	return translator
 
 @st.cache_resource
 def model_translator_es_en():
-	translator = pipeline('translation', model='Helsinki-NLP/opus-mt-es-en')
+	tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-es-en")
+	translator = pipeline('translation', model='Helsinki-NLP/opus-mt-es-en',tokenizer=tokenizer)
 	return translator
-#st.cache(show_spinner=False)
-#def load_model():
-#    tokenizer = AutoTokenizer.from_pretrained("twmkn9/distilbert-  base-uncased-squad2")
-#    model = AutoModelForQuestionAnswering.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
-#    nlp_pipe = pipeline('question-answering',model=model,tokenizer=tokenizer)
-#    return nlp_pipe
-#npl_pipe = load_model()
+@st.cache_resource
+def load_model():
+    tokenizer = AutoTokenizer.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
+    model = AutoModelForQuestionAnswering.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
+    nlp_pipe = pipeline('question-answering',model=model,tokenizer=tokenizer)
+    return nlp_pipe
 
 # import tempfile
 def text_downloader(raw_text):
@@ -73,6 +76,7 @@ class FileDownloader(object):
 
 #@st.cache
 def app():
+    npl_pipe = load_model()
     generator = model_generator()
     translator_es_en = model_translator_es_en()
     translator_en_es= model_translator_en_es()
