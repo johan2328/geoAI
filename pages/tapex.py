@@ -16,17 +16,18 @@ from transformers import pipeline
 import torch
 warnings.filterwarnings('ignore')                   
 
-st.title("Falcon-40B Demo")
+@st.cache(allow_output_mutation=True)
+def load_model():
+    model_name = "tiiuae/falcon-40b"
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model = AutoModelForCausalLM.from_pretrained(model_name)
+    return tokenizer, model
 
-model_name = "tiiuae/falcon-40b"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name)
-
-prompt = st.text_input("Enter your prompt here:")
-if prompt:
+def generate_text(prompt, max_length):
+    tokenizer, model = load_model()
     input_ids = tokenizer.encode(prompt, return_tensors="pt")
-    output = model.generate(input_ids=input_ids, max_length=850)
-    st.write(tokenizer.decode(output[0], skip_special_tokens=True))
+    output = model.generate(input_ids=input_ids, max_length=max_length)
+    return tokenizer.decode(output[0], skip_special_tokens=True)
 
 # import tempfile
 def text_downloader(raw_text):
@@ -64,7 +65,14 @@ class FileDownloader(object):
 
 #@st.cache
 def app():
-	
+    st.title("Falcon-40B Demo")
+
+    prompt = st.text_input("Enter your prompt here:")
+    if prompt:
+	max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
+	output = generate_text(prompt, max_length)
+	st.write(output)
+
     st.markdown("", unsafe_allow_html=True)
     #st.markdown("<h2 style='text-align: center; color: #2e6c80;'>Predicción de rupturas en red de distribución de aguas</h2>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #DBF2E9;'>Siga los pasos para entrenar en nuestros set de modelos de predictivos</h2>", unsafe_allow_html=True)
