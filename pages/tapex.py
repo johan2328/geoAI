@@ -100,7 +100,7 @@ def app():
         model = BartForConditionalGeneration.from_pretrained("microsoft/tapex-base-finetuned-wikisql")
 
         st.markdown("Pregunta a la tabla")
-	query = ""
+	#query = ""
 	st.write("", query)
         encoding = tokenizer(table=data, query=query, return_tensors="pt")
     
