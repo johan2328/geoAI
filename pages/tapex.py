@@ -15,24 +15,7 @@ from transformers import pipeline
 import torch
 warnings.filterwarnings('ignore')                   
 
-@st.cache_resource
-def model_generator():
-	tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-neo-125M")
-	generator = pipeline('text-generation', model='EleutherAI/gpt-neo-125M',tokenizer=tokenizer)
-	return generator
 
-@st.cache_resource
-def model_translator_en_es():
-	tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-es-en")
-	translator = pipeline('translation', model='Helsinki-NLP/opus-mt-en-es',tokenizer=tokenizer)
-	
-	return translator
-
-@st.cache_resource
-def model_translator_es_en():
-	tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-es-en")
-	translator = pipeline('translation', model='Helsinki-NLP/opus-mt-es-en',tokenizer=tokenizer)
-	return translator
 @st.cache_resource
 def load_model():
     tokenizer = AutoTokenizer.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
@@ -77,12 +60,13 @@ class FileDownloader(object):
 #@st.cache
 def app():
     npl_pipe = load_model()
-    generator = model_generator()
-    translator_es_en = model_translator_es_en()
-    translator_en_es= model_translator_en_es()
-
-    prompt_es=st.text_area('Texto a generar','Insertar texto aqui')
-    prompt_en=translator_es_en(prompt_es)
+    #generator = model_generator()
+    #translator_es_en = model_translator_es_en()
+    #translator_en_es= model_translator_en_es()
+	question = st.text_input(label='Insert a question.')
+	text = st.text_area(label="Context")
+    #prompt_es=st.text_area('Texto a generar','Insertar texto aqui')
+    #prompt_en=translator_es_en(prompt_es)
 	
     st.markdown("", unsafe_allow_html=True)
     #st.markdown("<h2 style='text-align: center; color: #2e6c80;'>Predicción de rupturas en red de distribución de aguas</h2>", unsafe_allow_html=True)
