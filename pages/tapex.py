@@ -11,15 +11,30 @@ from IPython.display import display
 from transformers import TapexTokenizer, BartForConditionalGeneration
 from transformers import AutoTokenizer,AutoModelForQuestionAnswering
 from transformers.pipelines import pipeline
+from transformers import pipeline
 warnings.filterwarnings('ignore')
 
-st.cache(show_spinner=False)
-def load_model():
-    tokenizer = AutoTokenizer.from_pretrained("twmkn9/distilbert-  base-uncased-squad2")
-    model = AutoModelForQuestionAnswering.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
-    nlp_pipe = pipeline('question-answering',model=model,tokenizer=tokenizer)
-    return nlp_pipe
-npl_pipe = load_model()
+@st.experimental_singlenton
+def model_generator():
+	generator = pipeline('text-generation', model='EleutherAI/gpt-neo-125M')
+	return = generator
+
+@st.experimental_singlenton
+def model_translator_en_es():
+	translator = pipeline('translation', model='Helsinki-NLP/opus-mt-en-es')
+	return = translator
+
+@st.experimental_singlenton
+def model_translator_es_en():
+	translator = pipeline('translation', model='Helsinki-NLP/opus-mt-es-en')
+	return = translator
+#st.cache(show_spinner=False)
+#def load_model():
+#    tokenizer = AutoTokenizer.from_pretrained("twmkn9/distilbert-  base-uncased-squad2")
+#    model = AutoModelForQuestionAnswering.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
+#    nlp_pipe = pipeline('question-answering',model=model,tokenizer=tokenizer)
+#    return nlp_pipe
+#npl_pipe = load_model()
 
 # import tempfile
 def text_downloader(raw_text):
@@ -54,15 +69,15 @@ class FileDownloader(object):
 		st.markdown("#### Descargar archivo ###")
 		href = f'<a href="data:file/{self.file_ext};base64,{b64}" download="{new_filename}">Click aqui!!</a>'
 		st.markdown(href,unsafe_allow_html=True)
+
+generator = model_generator()
+translator_es_en = model_translator_es_en()
+translator_en_es= model_translator_en_es()
 #@st.cache
 def app():
-    npl_pipe = load_model()
-    question = st.text_input(label='Insert a question.')
-    text = st.text_area(label="Context")
-    if (not len(text)==0) and not (len(question)==0):
-	    x_dict = npl_pipe(context=text,question=question)
-	    st.text('Answer: ',x_dict['answer'])
-			  
+    prompt_es=st.text_area('Texto a generar','Insertar texto aqui')
+    prompt_en=translator_es_en(prompt_es)
+	
     st.markdown("", unsafe_allow_html=True)
     #st.markdown("<h2 style='text-align: center; color: #2e6c80;'>Predicción de rupturas en red de distribución de aguas</h2>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #DBF2E9;'>Siga los pasos para entrenar en nuestros set de modelos de predictivos</h2>", unsafe_allow_html=True)
