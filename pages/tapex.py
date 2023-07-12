@@ -99,8 +99,9 @@ def app():
         tokenizer = TapexTokenizer.from_pretrained("microsoft/tapex-base-finetuned-wikisql")
         model = BartForConditionalGeneration.from_pretrained("microsoft/tapex-base-finetuned-wikisql")
 
-        st.markdown("Pregunta a la tabla") 
-        query = "¿year who have city iquals athens?"
+        st.markdown("Pregunta a la tabla")
+	query = ""
+	st.write("", query)
         encoding = tokenizer(table=data, query=query, return_tensors="pt")
     
         outputs = model.generate(**encoding, max_new_tokens=2000)
