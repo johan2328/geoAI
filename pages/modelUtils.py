@@ -25,8 +25,8 @@ def saveModel(modelClass, name = None):
 
 # model will be loaded through the location of model that is returned from the 
 def loadModel(fileName):
-	model = pickle.load(open(fileName, 'rb'))
-	return model
+	model1 = pickle.load(open(fileName, 'rb'))
+	return model1
 
 ### All the below tests passed
 if __name__ == '__main__':
@@ -38,4 +38,4 @@ if __name__ == '__main__':
 	path = saveModel(reg)
 	print("Model Name: "+path)
 	model = loadModel(path)
-	print("Loaded Model:", model.coef_)
+	print("Loaded Model:", model1.coef_)
