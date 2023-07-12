@@ -104,9 +104,9 @@ def app():
 			    st.markdown("Los anteriores son los tipos de columna automatizados detectados por la aplicación en los datos.") 
 			    st.markdown("Pregunta a la tabla")
 
-   st.markdown("Falcon-40B Demo")
-   prompt = st.text_input("Enter your prompt here:")
-   if prompt:
+	st.markdown("Falcon-40B Demo")
+   	prompt = st.text_input("Enter your prompt here:")
+   	if prompt:
 	   max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
 	   output = generate_text(prompt, max_length)
 	   st.write(output)
