@@ -92,8 +92,7 @@ def app():
 	    categorical_cols = list(set(list(data.columns)) - set(numeric_cols))
 	    
 	    columns = []
-	        # Iterate 
-	        try:
+	    try:
 	            columns = utils.genMetaData(data)
 	            #clean_dataset(columns)
 	        except Exception as e:
