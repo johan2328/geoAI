@@ -26,12 +26,7 @@ if prompt:
     output = generator(prompt, max_length=550)
     st.write(output[0]['generated_text'])
 
-@st.cache_resource
-def load_model():
-	tokenizer = AutoTokenizer.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
-	model = AutoModelForQuestionAnswering.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
-	nlp_pipe = pipeline('question-answering',model=model,tokenizer=tokenizer)
-	return nlp_pipe
+
 
 # import tempfile
 def text_downloader(raw_text):
@@ -69,14 +64,6 @@ class FileDownloader(object):
 
 #@st.cache
 def app():
-    npl_pipe = load_model()
-    #generator = model_generator()
-    #translator_es_en = model_translator_es_en()
-    #translator_en_es= model_translator_en_es()
-    question = st.text_input(label='Insert a question.')
-    text = st.text_area(label="Context")
-    #prompt_es=st.text_area('Texto a generar','Insertar texto aqui')
-    #prompt_en=translator_es_en(prompt_es)
 	
     st.markdown("", unsafe_allow_html=True)
     #st.markdown("<h2 style='text-align: center; color: #2e6c80;'>Predicción de rupturas en red de distribución de aguas</h2>", unsafe_allow_html=True)
@@ -133,7 +120,4 @@ def app():
 
         st.markdown("Pregunta a la tabla")
 	
-        #encoding = tokenizer(table=data, query=query, return_tensors="pt")
-    
-        #outputs = model.generate(**encoding, max_new_tokens=2000)
-        #print(tokenizer.batch_decode(outputs, skip_special_tokens=True))
+
