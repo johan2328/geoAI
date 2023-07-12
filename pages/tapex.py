@@ -74,8 +74,8 @@ class FileDownloader(object):
 #@st.cache
 def app():
     generator = model_generator()
-	translator_es_en = model_translator_es_en()
-	translator_en_es= model_translator_en_es()
+    translator_es_en = model_translator_es_en()
+    translator_en_es= model_translator_en_es()
 
     prompt_es=st.text_area('Texto a generar','Insertar texto aqui')
     prompt_en=translator_es_en(prompt_es)
