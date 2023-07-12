@@ -95,7 +95,7 @@ def app():
 	    try:
 	            columns = utils.genMetaData(data)
 	    except Exception as e:
-	            print("Revisar sus valores en archivo: {}".format(e))
+		    print("Revisar sus valores en archivo: {}".format(e))
 		    columns_df = pd.DataFrame(columns, columns = ['column_name', 'type'])
 		    columns_df.to_csv('data/metadata/column_type_desc.csv', index = False)
 		    st.markdown("**Nombre de columna**-**Tipo de dato**")
