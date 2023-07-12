@@ -13,7 +13,13 @@ from transformers import AutoTokenizer,AutoModelForQuestionAnswering
 from transformers.pipelines import pipeline
 warnings.filterwarnings('ignore')
 
-
+st.cache(show_spinner=False)
+def load_model():
+    tokenizer = AutoTokenizer.from_pretrained("twmkn9/distilbert-  base-uncased-squad2")
+    model = AutoModelForQuestionAnswering.from_pretrained("twmkn9/distilbert-base-uncased-squad2")
+    nlp_pipe = pipeline('question-answering',model=model,tokenizer=tokenizer)
+    return nlp_pipe
+npl_pipe = load_model()
 
 # import tempfile
 def text_downloader(raw_text):
@@ -50,8 +56,12 @@ class FileDownloader(object):
 		st.markdown(href,unsafe_allow_html=True)
 #@st.cache
 def app():
-    tokenizer = TapexTokenizer.from_pretrained("microsoft/tapex-base-finetuned-wikisql")
-    model = BartForConditionalGeneration.from_pretrained("microsoft/tapex-base-finetuned-wikisql")
+    question = st.text_input(label='Insert a question.')
+    text = st.text_area(label="Context")
+    if (not len(text)==0) and not (len(question)==0):
+     	x_dict = npl_pipe(context=text,question=question
+    	st.text('Answer: ',x_dict['answer'])
+			  
     st.markdown("", unsafe_allow_html=True)
     #st.markdown("<h2 style='text-align: center; color: #2e6c80;'>Predicción de rupturas en red de distribución de aguas</h2>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #DBF2E9;'>Siga los pasos para entrenar en nuestros set de modelos de predictivos</h2>", unsafe_allow_html=True)
@@ -107,7 +117,7 @@ def app():
 
         st.markdown("Pregunta a la tabla")
 	
-        encoding = tokenizer(table=data, query=query, return_tensors="pt")
+        #encoding = tokenizer(table=data, query=query, return_tensors="pt")
     
-        outputs = model.generate(**encoding, max_new_tokens=2000)
-        print(tokenizer.batch_decode(outputs, skip_special_tokens=True))
+        #outputs = model.generate(**encoding, max_new_tokens=2000)
+        #print(tokenizer.batch_decode(outputs, skip_special_tokens=True))
