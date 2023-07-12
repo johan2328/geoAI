@@ -132,6 +132,7 @@ app.add_page("Análisis de Datos",visual_data.app)
 app.add_page("Validación ML", ml_validacion.app)
 app.add_page("Formulario ML", ml_formulario.app)
 app.add_page("Predicción masiva ML", ml_masivo.app)
+app.add_page("Lenguaje natural para consultas de tablas", tapex.app)
 #app.add_page("Y-Parameter Optimization",redundant.app)
 
 author_pic = Image.open('microsoft-partner.png')
