@@ -12,6 +12,7 @@ from transformers import TapexTokenizer, BartForConditionalGeneration
 from transformers import AutoTokenizer,AutoModelForQuestionAnswering
 from transformers.pipelines import pipeline
 from transformers import pipeline
+import torch
 warnings.filterwarnings('ignore')                   
 
 @st.experimental_singleton
