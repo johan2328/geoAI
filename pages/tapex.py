@@ -54,6 +54,8 @@ def app():
     #temp_file_path = data.to_csv('data/main_data.csv', index=False)
     #st.markdown("### Carga los CSV.") 
     st.write("\n")
+    query = st.text_input("Placeholder for the other text input widget","Cargar texto", key="placeholder")
+    st.write("", query)
     st.markdown("#### Cargar data (archivos .csv o .xlsx)")
      
     uploaded_file = st.file_uploader("Selecciona el archivo", type = ['csv', 'xlsx'])
@@ -91,11 +93,7 @@ def app():
 
         # Display de columnas
         st.markdown("**Nombre de columna**-**Tipo de dato**")
-	query = st.text_input(
-        "Placeholder for the other text input widget",
-        "Cargar texto",
-        key="placeholder")
-	st.write("", query)
+	
         for i in range(columns_df.shape[0]):
             st.write(f"{i+1}. **{columns_df.iloc[i]['column_name']}** - {columns_df.iloc[i]['type']}")
         
