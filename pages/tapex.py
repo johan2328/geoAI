@@ -77,7 +77,12 @@ def app():
     st.markdown("#### Cargar data (archivos .csv o .xlsx)")
      
     uploaded_file = st.file_uploader("Selecciona el archivo", type = ['csv', 'xlsx'])
-    
+    st.markdown("Falcon-40B Demo")
+    prompt = st.text_input("Enter your prompt here:")
+    if prompt:
+	max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
+	output = generate_text(prompt, max_length)
+	st.write(output)
     if uploaded_file is not None:
         try:
             data = pd.read_csv(uploaded_file,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False) #,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False
@@ -104,10 +109,5 @@ def app():
 			    st.markdown("Los anteriores son los tipos de columna automatizados detectados por la aplicación en los datos.") 
 			    st.markdown("Pregunta a la tabla")
 
-	st.markdown("Falcon-40B Demo")
-   	prompt = st.text_input("Enter your prompt here:")
-   	if prompt:
-	   max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
-	   output = generate_text(prompt, max_length)
-	   st.write(output)
+
 	
