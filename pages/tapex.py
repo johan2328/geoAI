@@ -30,7 +30,9 @@ def generate_text(prompt, max_length):
     output = model.generate(input_ids=input_ids, max_length=max_length)
     return tokenizer.decode(output[0], skip_special_tokens=True)
 
-
+def run_model():
+    # Cargar el modelo
+    tokenizer, model = load_model()
 # import tempfile
 def text_downloader(raw_text):
 	b64 = base64.b64encode(raw_text.encode()).decode()
@@ -66,14 +68,20 @@ class FileDownloader(object):
 		st.markdown(href,unsafe_allow_html=True)
 
 #@st.cache
-def app():
+def app
     st.markdown("Falcon-40B Demo")
-    prompt = st.text_input("Enter your prompt here:")
+    prompt = "Escriba aquí su prompt"
+    max_length = 800
+    input_ids = tokenizer.encode(prompt, return_tensors="pt")
+    output = model.generate(input_ids=input_ids, max_length=max_length)
+    generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
+    st.write(generated_text)	
+    #prompt = st.text_input("Enter your prompt here:")
     if st.button('Generar texto'):
-		    max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
-		    t = threading.Thread(target=generate_text)
-		    st.write(t)
-        t.start()
+    #	    max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
+    	    t = threading.Thread(target=run_model)
+		#    st.write(t)
+            t.start()
 	     #if prompt:
 	 #	     max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
 	 #	     output = generate_text(prompt, max_length)
