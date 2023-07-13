@@ -14,6 +14,7 @@ from transformers import AutoTokenizer,AutoModelForQuestionAnswering
 from transformers.pipelines import pipeline
 from transformers import pipeline
 import torch
+import threading
 warnings.filterwarnings('ignore')                   
 
 @st.cache(allow_output_mutation=True)
@@ -28,6 +29,7 @@ def generate_text(prompt, max_length):
     input_ids = tokenizer.encode(prompt, return_tensors="pt")
     output = model.generate(input_ids=input_ids, max_length=max_length)
     return tokenizer.decode(output[0], skip_special_tokens=True)
+
 
 # import tempfile
 def text_downloader(raw_text):
@@ -67,10 +69,15 @@ class FileDownloader(object):
 def app():
     st.markdown("Falcon-40B Demo")
     prompt = st.text_input("Enter your prompt here:")
-    if prompt:
-	     max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
-	     output = generate_text(prompt, max_length)
-	     st.write(output)
+    if st.button('Generar texto'):
+		    max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
+		    t = threading.Thread(target=run_model)
+		    st.write(t)
+        t.start()
+	     #if prompt:
+	 #	     max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
+	 #	     output = generate_text(prompt, max_length)
+	 #	     st.write(output)
     st.markdown("", unsafe_allow_html=True)
     #st.markdown("<h2 style='text-align: center; color: #2e6c80;'>Predicción de rupturas en red de distribución de aguas</h2>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #DBF2E9;'>Siga los pasos para entrenar en nuestros set de modelos de predictivos</h2>", unsafe_allow_html=True)
