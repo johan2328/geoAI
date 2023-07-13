@@ -95,7 +95,6 @@ def app():
     st.markdown("Falcon-40B Demo")
     prompt = "Escriba aquí su prompt"
     max_length = 800
-    input_ids = tokenizer.encode(prompt, return_tensors="pt")
     output = model.generate(input_ids=input_ids, max_length=max_length)
     generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
     st.write(generated_text)	
