@@ -92,19 +92,7 @@ class FileDownloader(object):
 
 #@st.cache
 def app():
-    st.markdown("Falcon-40B Demo")
-    prompt = "Escriba aquí su prompt"
-    max_length = 800
-    input_ids = tokenizer.encode(prompt, return_tensors="pt")
-    output = model.generate(input_ids=input_ids, max_length=max_length)
-    generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
-    st.write(generated_text)	
-    #prompt = st.text_input("Enter your prompt here:")
-    if st.button('Generar texto'):
-    #	    max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
-    	    t = threading.Thread(target=run_model)
-		#    st.write(t)
-            t.start()
+
 	     #if prompt:
 	 #	     max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
 	 #	     output = generate_text(prompt, max_length)
