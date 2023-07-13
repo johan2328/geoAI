@@ -102,7 +102,7 @@ def app():
     #prompt = st.text_input("Enter your prompt here:")
     if st.button('Generar texto'):
     #	    max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
-    	    t = threading.Thread(target=run_model)
+    	    t=threading.Thread(target=run_model)
 		#    st.write(t)
             t.start()
 	     #if prompt:
