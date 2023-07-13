@@ -68,9 +68,9 @@ def app():
     st.markdown("Falcon-40B Demo")
     prompt = st.text_input("Enter your prompt here:")
     if prompt:
-		max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
-		output = generate_text(prompt, max_length)
-		st.write(output)
+	max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
+	output = generate_text(prompt, max_length)
+	st.write(output)
     st.markdown("", unsafe_allow_html=True)
     #st.markdown("<h2 style='text-align: center; color: #2e6c80;'>Predicción de rupturas en red de distribución de aguas</h2>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #DBF2E9;'>Siga los pasos para entrenar en nuestros set de modelos de predictivos</h2>", unsafe_allow_html=True)
@@ -81,10 +81,8 @@ def app():
     st.write("\n")
 
     st.markdown("#### Cargar data (archivos .csv o .xlsx)")
-     
     uploaded_file = st.file_uploader("Selecciona el archivo", type = ['csv', 'xlsx'])
     
-
     if uploaded_file is not None:
         try:
             data = pd.read_csv(uploaded_file,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False) #,verbose =True,keep_default_na=False,na_values=[''],warn_bad_lines = True, error_bad_lines=False
