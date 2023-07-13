@@ -95,7 +95,6 @@ def app():
     st.markdown("Falcon-40B Demo")
     prompt = "Escriba aquí su prompt"
     max_length = 800
-    st.write(generated_text)	
     #prompt = st.text_input("Enter your prompt here:")
     if st.button('Generar texto'):
     #max_length = st.slider("Max length", min_value=10, max_value=1000, value=50)
