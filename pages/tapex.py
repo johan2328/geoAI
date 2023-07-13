@@ -24,15 +24,38 @@ def load_model():
     model = AutoModelForCausalLM.from_pretrained(model_name)
     return tokenizer, model
 
-def generate_text(prompt, max_length):
-    tokenizer, model = load_model()
-    input_ids = tokenizer.encode(prompt, return_tensors="pt")
-    output = model.generate(input_ids=input_ids, max_length=max_length)
-    return tokenizer.decode(output[0], skip_special_tokens=True)
-
 def run_model():
     # Cargar el modelo
     tokenizer, model = load_model()
+
+    # Generar texto utilizando el modelo
+    prompt = "Escriba aquí su prompt"
+    max_length = 50
+    input_ids = tokenizer.encode(prompt, return_tensors="pt")
+    output = model.generate(input_ids=input_ids, max_length=max_length)
+    generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
+
+    # Mostrar el texto generado en Streamlit
+    st.write(generated_text)
+
+def main():
+    # Título de la página
+    st.title('Generador de texto')
+
+    # Cargar el modelo
+    tokenizer, model = load_model()
+
+    # Prompt para generar texto
+    prompt = st.text_input('Escriba aquí su prompt')
+
+    # Longitud máxima del texto generado
+    max_length = st.slider('Longitud máxima', 10, 1000, 50)
+
+    # Botón para generar texto
+    if st.button('Generar texto'):
+        # Crear un hilo y ejecutar el modelo en ese hilo
+        t = threading.Thread(target=run_model)
+        t.start()
 # import tempfile
 def text_downloader(raw_text):
 	b64 = base64.b64encode(raw_text.encode()).decode()
@@ -68,7 +91,7 @@ class FileDownloader(object):
 		st.markdown(href,unsafe_allow_html=True)
 
 #@st.cache
-def app
+def app()
     st.markdown("Falcon-40B Demo")
     prompt = "Escriba aquí su prompt"
     max_length = 800
