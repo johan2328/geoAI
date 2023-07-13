@@ -91,7 +91,7 @@ class FileDownloader(object):
 		st.markdown(href,unsafe_allow_html=True)
 
 #@st.cache
-def app()
+def app():
     st.markdown("Falcon-40B Demo")
     prompt = "Escriba aquí su prompt"
     max_length = 800
