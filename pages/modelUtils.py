@@ -28,6 +28,12 @@ def loadModel(fileName):
 	model1 = pickle.load(open(fileName, 'rb'))
 	return model1
 
+def main():
+    # Crear un botón para ejecutar el modelo
+    if st.button('Generar texto'):
+        # Crear un hilo y ejecutar el modelo en ese hilo
+        t = threading.Thread(target=run_model)
+        t.start()
 ### All the below tests passed
 if __name__ == '__main__':
 	print(checkDir())
